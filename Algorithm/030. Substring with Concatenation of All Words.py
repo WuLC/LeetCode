@@ -19,12 +19,12 @@ class Solution(object):
         wordLen = len(words[0])
         result = []
         
-        for i in range(len(s)-wordLen+1):
+        for i in range(len(s)-wordLen*wordNum+1):
             tmp = s[i:i+wordLen]
             tmpDict = {} # 存储words的临时list
             if tmp in words:                
                 head = i
-                while tmp in words and i< len(s)-wordLen+1:
+                while tmp in words and i < len(s)-wordLen+1:            
                     if tmp in tmpDict:
                         tmpDict[tmp] += 1
                     else:
@@ -39,8 +39,7 @@ class Solution(object):
                 if tmpDict == wordDict:
                     result.append(head)
             else:
-                continue
-            
+                continue         
         return result
  
 
