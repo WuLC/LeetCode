@@ -68,4 +68,37 @@ class Solution(object):
                 else:
                     longest.append(0)
         return max(longest)
+ 
+
+
                     
+# 方法三，用栈存储不合法的括号的位置，那么两个相邻的不合法位置就是一个合法的括号串的长度；时间复杂度O(n)
+class Solution(object):
+    def longestValidParentheses(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        maxLen = 0
+        stack=[]
+        for i in range(len(s)):
+            if s[i] == ')' and len(stack)>0 and s[stack[-1]]=='(':
+                stack.pop(len(stack)-1)
+                maxLen = 2
+            else:
+                stack.append(i)
+        
+        
+        # 全匹配        
+        if len(stack) == 0: 
+            return len(s)
+        # 不在不匹配的要在头尾插入元素来计算头或尾匹配的括号
+        stack.append(len(s))
+        stack.insert(0,-1)
+        j = len(stack)-1
+        while j>0:
+            maxLen = max(maxLen,stack[j]-stack[j-1]-1)
+            j -= 1
+        return maxLen
+                
+
