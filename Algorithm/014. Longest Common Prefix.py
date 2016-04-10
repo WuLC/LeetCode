@@ -1,4 +1,10 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-08 09:43:39
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:24
+# @Email: liangchaowu5@gmail.com
+
 # 功能：找出字符串
 
 class Solution(object):

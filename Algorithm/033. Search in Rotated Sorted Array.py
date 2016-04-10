@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-07 09:47:36
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:22:37
+# @Email: liangchaowu5@gmail.com
+
+
 # 方法一，先找到最小list中最小值的下标，下标会将原来的list分为两个sorted list
 # 判断target在哪个sorted list然后对这个sorted list进行二分查找即可
 class Solution(object):

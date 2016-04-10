@@ -1,9 +1,9 @@
-# encoding:utf-8
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-30 20:09:39
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:56
+# @Email: liangchaowu5@gmail.com
 
 class Solution(object):
     def reverseKGroup(self, head, k):

@@ -1,4 +1,11 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-12 10:40:35
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:46
+# @Email: liangchaowu5@gmail.com
+
+
 #方案一:递归，超时
 class Solution(object):
     def isMatch(self, s, p):

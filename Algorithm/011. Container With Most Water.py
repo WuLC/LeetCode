@@ -1,4 +1,10 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-05 18:28:40
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:15
+# @Email: liangchaowu5@gmail.com
+
 # 要使任何S(i>=left, j<=right) >= S(left,right)，由于j-i <= right-left
 # 必然要有min(ai,aj)>=min(a(left),a(right))才行
 

@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-01-23 10:53:34
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:45
+# @Email: liangchaowu5@gmail.com
+
 
 #########################################
 # 注意：

@@ -1,4 +1,10 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-02-28 19:53:51
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:12
+# @Email: liangchaowu5@gmail.com
+
 # 实现. 和 * 正则表达的功能，
 # 参考：http://www.cnblogs.com/zuoyuan/p/3781773.html
 

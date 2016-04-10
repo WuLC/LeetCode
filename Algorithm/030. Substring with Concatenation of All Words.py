@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-04 11:02:34
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:22:57
+# @Email: liangchaowu5@gmail.com
+
+
 # 列了两种方法作对比，一种超时，一种AC；对比过才能发现第二种方法的巧妙 
 
 # 方法一，时间复杂度O(n^2)，n=len(s);提交超时

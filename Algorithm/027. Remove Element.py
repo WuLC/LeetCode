@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-31 10:11:49
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:11
+# @Email: liangchaowu5@gmail.com
+
+
 class Solution(object):
     def removeElement(self, nums, val):
         """

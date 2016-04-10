@@ -1,4 +1,10 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-07 20:21:01
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:18
+# @Email: liangchaowu5@gmail.com
+
 '''
 功能：将阿拉伯数字转为罗马数字，下面为具体规则：
 

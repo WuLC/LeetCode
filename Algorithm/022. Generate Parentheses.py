@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-13 09:19:13
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:49
+# @Email: liangchaowu5@gmail.com
+
 class Solution(object):
     def generateParenthesis(self, n):
         """

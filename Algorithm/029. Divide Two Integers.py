@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-01 13:54:25
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:04
+# @Email: liangchaowu5@gmail.com
+
+
 class Solution(object):
     def divide(self, dividend, divisor):
         """

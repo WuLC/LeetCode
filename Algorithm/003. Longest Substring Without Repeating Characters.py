@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-01-24 11:02:34
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:30
+# @Email: liangchaowu5@gmail.com
+
 
 #########################################
 #方法一：遍历以每个字符开头的最长子串

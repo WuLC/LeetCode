@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-29 10:05:03
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:26
+# @Email: liangchaowu5@gmail.com
+
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, x):

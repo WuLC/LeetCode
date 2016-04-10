@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-02-10 15:45:53
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:07
+# @Email: liangchaowu5@gmail.com
+
 
 #将数字转换为字符串再判断是否为回文
 

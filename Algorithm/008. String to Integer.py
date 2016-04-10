@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-02-08 11:23:56
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:04
+# @Email: liangchaowu5@gmail.com
+
 ##############################
 #将字符串转为数字，需要考虑的问题有
 #1.去掉空格,且只能去掉字符串前面的空格

@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-10 18:42:22
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:36
+# @Email: liangchaowu5@gmail.com
+
 class Solution(object):
     def fourSum(self, nums, target):
         """

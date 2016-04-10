@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-01-21 09:28:43
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:40
+# @Email: liangchaowu5@gmail.com
+
 
 ####################################
 #解题思路：

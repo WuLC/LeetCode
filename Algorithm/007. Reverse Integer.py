@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-02-07 09:51:59
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:00
+# @Email: liangchaowu5@gmail.com
+
 ##############################
 #将int类型转换成str类型，将str类型反转即可
 #如果采用取模方法首先难以确定整数的位数，再者有溢出的可能

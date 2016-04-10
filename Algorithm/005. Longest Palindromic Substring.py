@@ -1,4 +1,10 @@
-#encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-01-30 22:38:53
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:53
+# @Email: liangchaowu5@gmail.com
+ 
 ################################################
 #方法一：从长到短遍历字符串，判断每次得到的子字符串是否为回文字符串，时间复杂度为O(n^3)
 #将判断一个字符串是否为回文字符串封装成函数isPalindromic，但是leetcode提示找不到这个函数

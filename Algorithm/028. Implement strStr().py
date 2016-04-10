@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-01 13:53:29
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:08
+# @Email: liangchaowu5@gmail.com
+
 class Solution(object):
     def strStr(self, haystack, needle):
         """

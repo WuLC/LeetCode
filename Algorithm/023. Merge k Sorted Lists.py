@@ -1,4 +1,10 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-27 12:43:15
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:52
+# @Email: liangchaowu5@gmail.com
+
 
 # 方法一：线性合并，时间复杂度为n^2
 class Solution(object):

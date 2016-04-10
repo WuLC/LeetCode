@@ -1,4 +1,11 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-09 09:57:54
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:22:11
+# @Email: liangchaowu5@gmail.com
+
+
 # 思路：字典存储行，列，块对应的数字，遍历一次即可判断
 class Solution(object):
     def isValidSudoku(self, board):

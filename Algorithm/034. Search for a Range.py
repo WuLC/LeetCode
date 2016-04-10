@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-08 15:02:26
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:22:30
+# @Email: liangchaowu5@gmail.com
+
+
+
 # 找到与target相同的数，从这个位置往左右递归找
 class Solution(object):
     def searchRange(self, nums, target):

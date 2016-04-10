@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-04-05 11:14:21
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:22:41
+# @Email: liangchaowu5@gmail.com
+
+
 # 方法一，超时，时间复杂度O(n^2)
 class Solution(object):
     def longestValidParentheses(self, s):

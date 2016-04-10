@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-01-28 11:38:09
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:23:49
+# @Email: liangchaowu5@gmail.com
 #########################################
 #方法一：同时遍历两个数组合并成一个
 #时间复杂度O(m+n),居然AC了

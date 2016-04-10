@@ -1,4 +1,10 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
+# @Author: LC
+# @Date:   2016-03-08 09:41:01
+# @Last modified by:   LC
+# @Last Modified time: 2016-04-10 16:24:22
+# @Email: liangchaowu5@gmail.com
+
 # 功能：将罗马数字转为阿拉伯数字
 class Solution(object):
     def romanToInt(self, s):
