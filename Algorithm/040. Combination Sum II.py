@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-04-12 10:52:14
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-04-12 13:07:52
+# @Last Modified time: 2016-04-13 09:29:04
 # @Email: liangchaowu5@gmail.com
 
 # DP
@@ -44,3 +44,21 @@ class Solution(object):
                                 dp[i].append(tmp)
         return dp[target]
 
+# bracktracking
+class Solution(object):
+    def combinationSum2(self, candidates, target):
+        candidates.sort()
+        result = []
+        self.dfs(candidates,target,0 ,[],result)
+        return result
+
+
+    def dfs(self, nums, tar, index, tmp, res):
+        if tar == 0 :
+            if tmp not in res:
+                res.append(tmp)
+        else:
+            for i in range(index,len(nums)):
+                if tar-nums[i]<0:
+                    return
+                self.dfs(nums, tar-nums[i], i+1, tmp+[nums[i]], res)
