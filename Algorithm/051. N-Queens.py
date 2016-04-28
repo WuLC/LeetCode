@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-04-19 15:10:03
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-04-19 18:14:25
+# @Last Modified time: 2016-04-28 23:11:34
 # @Email: liangchaowu5@gmail.com
 
 # 方法一：回溯法
@@ -69,7 +69,7 @@ class Solution(object):
         solutions = []
         board = [['.' for i in range(n)] for j in range(n)] #生成n*n的原始矩阵
         col = [0 for i in range(n)]
-        left_dia = [0 for i in range(2*n-1)]
+        left_dia =  [0 for i in range(2*n-1)]
         right_dia = [0 for i in range(2*n-1)]
 
         self.helper(board, solutions,0, col,left_dia,right_dia)
