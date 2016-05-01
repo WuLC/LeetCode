@@ -2,10 +2,10 @@
 # @Author: LC
 # @Date:   2016-04-27 10:19:13
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-04-28 09:48:20
+# @Last Modified time: 2016-05-01 08:56:01
 # @Email: liangchaowu5@gmail.com
 
-# space complexity O(n)
+# method 1,space complexity O(n)
 class Solution(object):
     def rotate(self, matrix):
         """
@@ -22,7 +22,7 @@ class Solution(object):
             for j in xrange(n):
                 matrix[j][n-1-i] = b[i][j]
         
-# space complexity O(1)
+# method 2，space complexity O(1)
 class Solution(object):
     def rotate(self, matrix):
         """
