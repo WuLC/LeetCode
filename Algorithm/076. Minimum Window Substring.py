@@ -2,10 +2,10 @@
 # @Author: WuLC
 # @Date:   2016-05-15 16:21:48
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-05-15 16:24:22
+# @Last Modified time: 2016-05-15 16:24:59
 # @Email: liangchaowu5@gmail.com
 
-# two pointers, with a dictionary and counter to determine whether the current substring contains 
+# two pointers, with a dictionary and counter to determine whether the current substring contains t
 class Solution(object):
     def minWindow(self, s, t):
         """
