@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-05-31 10:15:31
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-06-01 22:21:11
+# @Last Modified time: 2016-06-03 22:47:24
 # @Email: liangchaowu5@gmail.com
 
 # Definition for a binary tree node.
@@ -24,13 +24,9 @@ class Solution(object):
         result = []
         if root == None:
             return result
-        if root.left != None:
-            left = self.inorderTraversal(root.left)
-            result += left
+        result += self.inorderTraversal(root.left)
         result.append(root.val)
-        if root.right != None:
-            right = self.inorderTraversal(root.right)
-            result += right
+        result += self.inorderTraversal(root.right)
         return result
 
 
@@ -52,6 +48,3 @@ class Solution(object):
                 result.append(tmp.val)
                 curr_node = tmp.right
         return result
-                
-        
-        
