@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-06-25 16:14:24
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-06-25 16:32:21
+# @Last Modified time: 2016-06-25 21:53:30
 # @Email: liangchaowu5@gmail.com
 
 # method 1 ,find the valid string firstly, then judge whether isPalindrome, TLE
