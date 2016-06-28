@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-06-27 21:34:45
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-06-27 21:35:03
+# @Last Modified time: 2016-06-28 20:26:01
 # @Email: liangchaowu5@gmail.com
 
 
@@ -30,4 +30,5 @@ class Solution(object):
             else:
                 return False
         return True
+
                 
