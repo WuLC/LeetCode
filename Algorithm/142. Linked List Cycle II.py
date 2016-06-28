@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-06-27 23:09:22
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-06-28 14:22:05
+# @Last Modified time: 2016-06-28 15:23:47
 # @Email: liangchaowu5@gmail.com
 
 # Definition for singly-linked list.
@@ -11,18 +11,18 @@
 #         self.val = x
 #         self.next = None
 
-# method 1, hash table, TLE
+# method 1, hash table
 class Solution(object):
     def detectCycle(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        nodes = []
+        nodes = set()
         while head:
             if head in nodes:
                 return head
-            nodes.append(head)
+            nodes.add(head)
             head = head.next
         return None
 
