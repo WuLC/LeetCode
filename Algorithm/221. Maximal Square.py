@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-07-11 20:37:19
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-11 20:58:56
+# @Last Modified time: 2016-07-16 11:39:57
 # @Email: liangchaowu5@gmail.com
 
 # method 1, find maximal square in histogram level by level, O(mn)
@@ -34,4 +34,4 @@ class Solution(object):
                 result = max(result, pow(min(width,heigh),2))
         return result
 
-# method 2
+# method 2, DP
