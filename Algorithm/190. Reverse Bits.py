@@ -2,10 +2,10 @@
 # @Author: LC
 # @Date:   2016-07-20 10:11:00
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-20 10:13:11
+# @Last Modified time: 2016-07-20 10:13:40
 # @Email: liangchaowu5@gmail.com
 
-# If this function is called many times, we can store pow(2,i) (0<=i<=31) in a list to optmize it
+# If this function is called many times, we can store pow(2,i) (0<=i<=31) in a list to optimize it
 class Solution(object):
     def reverseBits(self, n):
         """
