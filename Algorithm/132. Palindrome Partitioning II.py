@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-07-18 10:13:32
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-18 16:26:30
+# @Last Modified time: 2016-07-20 21:56:03
 # @Email: liangchaowu5@gmail.com
 
 # backtracking, TLE
@@ -63,3 +63,26 @@ class Solution(object):
             if s[i] != s[n-i-1]:
                 return False
         return True
+
+# DP2， similar to the above ,but store the middle result
+class Solution(object):
+    def minCut(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        n = len(s)
+        cut = [i-1 for i in xrange(n+1)] # cut[i] = the minimun cut for s[:i+1]
+        pal = [[False for i in xrange(n)] for j in xrange(n)] # pal[i][j] = whether s[i,j+1] is palindrome
+        for i in xrange(n):
+            for j in xrange(i+1):
+                if i==j:
+                    pal[i][j] = True
+                elif j+1 == i:
+                    pal[i][j] = (s[i]==s[j])
+                else:
+                    pal[i][j] = (s[i]==s[j]) and pal[i-1][j+1]
+                
+                if pal[i][j]:
+                    cut[i+1] = min(cut[i+1], cut[j] + 1)
+        return cut[n]
