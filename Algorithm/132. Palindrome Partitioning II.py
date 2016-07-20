@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-07-18 10:13:32
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-20 21:56:03
+# @Last Modified time: 2016-07-20 21:56:41
 # @Email: liangchaowu5@gmail.com
 
 # backtracking, TLE
@@ -76,7 +76,7 @@ class Solution(object):
         pal = [[False for i in xrange(n)] for j in xrange(n)] # pal[i][j] = whether s[i,j+1] is palindrome
         for i in xrange(n):
             for j in xrange(i+1):
-                if i==j:
+                if i==j: 
                     pal[i][j] = True
                 elif j+1 == i:
                     pal[i][j] = (s[i]==s[j])
