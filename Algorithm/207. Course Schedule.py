@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-07-28 11:48:49
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-28 14:08:40
+# @Last Modified time: 2016-07-28 21:43:53
 # @Email: liangchaowu5@gmail.com
 
 # pure DFS, TLE
@@ -17,7 +17,7 @@ class Solution(object):
         for s in prerequisites:
             course[s[0]][s[1]] = 1
             
-        visited = set()
+        visited = [0 for i in xrange(numCourses)]
         for i in xrange(numCourses):
             if self.dfs(course, i, visited)==False:
                 return False
@@ -27,13 +27,13 @@ class Solution(object):
     def dfs(self, course, num, visited):
         for i in xrange(len(course[num])):
             if course[num][i] == 1:
-                visited.add(num)
-                if i in visited:
+                visited[num] = 1
+                if visited[i] == 1:
                     return False
                 else:
                     if self.dfs(course, i, visited) == False:
                         return False
-                    visited.remove(num)
+                    visited[num] = 0
                     
         
 # Topological Sort
