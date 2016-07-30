@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-07-30 20:37:33
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-30 20:37:40
+# @Last Modified time: 2016-07-30 20:41:13
 # @Email: liangchaowu5@gmail.com
 
 # Definition for a binary tree node.
@@ -20,6 +20,8 @@ class Solution(object):
         """
         return max(self.dfs(root))
     
+    # return two value, the first represents the maximal money that can rob without robbing the root of the tree
+    # the second represents the maximal money that can rob when robbing the root of the tree
     def dfs(self, root):
         if root == None:
             return (0,0)
