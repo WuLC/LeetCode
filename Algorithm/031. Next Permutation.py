@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: LC
 # @Date:   2016-04-04 11:13:21
-# @Last modified by:   LC
-# @Last Modified time: 2016-04-10 16:22:46
+# @Last modified by:   WuLC
+# @Last Modified time: 2016-07-31 22:53:19
 # @Email: liangchaowu5@gmail.com
 
 
@@ -12,10 +12,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        sortList = sorted(nums)
-        if nums == sortList[::-1]:
-            nums.sort()
-            return
         
         i = len(nums)-1
         flag = 0
@@ -40,3 +36,4 @@ class Solution(object):
                 return                 
             else:
                 i-=1
+        nums.sort()
