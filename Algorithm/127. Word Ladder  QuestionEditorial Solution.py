@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-08-07 15:47:20
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-07 17:01:22
+# @Last Modified time: 2016-08-08 12:56:24
 # @Email: liangchaowu5@gmail.com
 
 
@@ -90,4 +90,39 @@ class Solution(object):
                 tmp[i] = original
         self.helper(next_level, wordList, distance, endWord)
                 
-    
+
+# method 3, two-end BFS, AC, much faster than method 2 which is  one-end BFS
+class Solution(object):
+    def ladderLength(self, beginWord, endWord, wordList):
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: Set[str]
+        :rtype: int
+        """
+        head, tail = set(), set()
+        head.add(beginWord)
+        tail.add(endWord)
+        wordList.remove(beginWord)
+        wordList.remove(endWord)
+        distance = 2
+        while len(head)>0 and len(tail)>0:
+            if len(head)>len(tail):
+                head, tail = tail, head
+            next_level = set()
+            for word in head:
+                tmp = [s for s in word]
+                for i in xrange(len(tmp)):
+                    letter = tmp[i]
+                    for j in xrange(26):
+                        tmp[i] = chr(97+j)
+                        temp = ''.join(tmp)
+                        if temp in tail:
+                            return distance
+                        if temp in wordList:
+                            next_level.add(temp)
+                            wordList.remove(temp)
+                    tmp[i] = letter
+            distance += 1
+            head = next_level
+        return 0
