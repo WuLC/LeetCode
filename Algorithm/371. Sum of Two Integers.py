@@ -2,8 +2,9 @@
 # @Author: LC
 # @Date:   2016-08-13 21:10:12
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-13 21:11:27
+# @Last Modified time: 2016-08-13 21:25:54
 # @Email: liangchaowu5@gmail.com
+
 
 class Solution(object):
     def getSum(self, a, b):
