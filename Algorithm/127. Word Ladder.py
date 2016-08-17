@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-08-07 15:47:20
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-08 12:56:24
+# @Last Modified time: 2016-08-17 08:41:00
 # @Email: liangchaowu5@gmail.com
 
 
@@ -52,7 +52,7 @@ class Solution(object):
 
 
 # method 2, BFS, AC, O(kn)
-# similar to method 1, just change the way of finding the words in the wordList that differ only one letter from the current word  
+# based on method 1, just change the way of finding the words in the wordList that differ only one letter from the current word  
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
         """
