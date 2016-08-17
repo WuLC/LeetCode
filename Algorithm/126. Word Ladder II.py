@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-08-07 21:10:52
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-17 10:05:12
+# @Last Modified time: 2016-08-17 10:08:44
 # @Email: liangchaowu5@gmail.com
 
 # method 1, one end BFS, find all the results and chooses the min_length from it , TLE
@@ -89,7 +89,7 @@ class Solution(object):
 
 
 # method 3, BFS then DFS, AC
-# BFS to find all possible connections, DFS to find the valid connection from the result botained by BFS
+# BFS to find all possible connections, DFS to find the valid connection from the result obtained by BFS
 class Solution(object):
     def findLadders(self, beginWord, endWord, wordlist):
         """
