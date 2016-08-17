@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-08-07 21:10:52
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-07 23:38:51
+# @Last Modified time: 2016-08-17 10:05:12
 # @Email: liangchaowu5@gmail.com
 
 # method 1, one end BFS, find all the results and chooses the min_length from it , TLE
@@ -86,3 +86,59 @@ class Solution(object):
                 words.pop()
         #wordlist = wordlist.union(set(level)) # rebinding mutable variable can not change the variabe in a function
         for w in set(level): wordlist.add(w)  
+
+
+# method 3, BFS then DFS, AC
+# BFS to find all possible connections, DFS to find the valid connection from the result botained by BFS
+class Solution(object):
+    def findLadders(self, beginWord, endWord, wordlist):
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordlist: Set[str]
+        :rtype: List[List[int]]
+        """
+        head, result, link = set(), [], [] # element for link-[{word:[]}]
+        head.add(beginWord)
+        found = False
+        while len(head)>0:
+            next_level = set()
+            tmp_link = {}
+            wordlist -= head
+            for word in head:
+                tmp = [s for s in word]
+                for i in xrange(len(tmp)):
+                    letter = tmp[i]
+                    for j in xrange(26):
+                        tmp[i] = chr(97+j)
+                        temp = ''.join(tmp)
+                        if temp == endWord:
+                            found = True
+                        if temp in wordlist and temp not in tmp_link:
+                            next_level.add(temp)
+                            tmp_link.setdefault(word, [])
+                            tmp_link[word].append(temp)
+                    tmp[i] = letter
+            link.append(tmp_link)
+            if found:
+                break
+            head = next_level
+        if found:
+            self.dfs(link , beginWord, endWord, 0, [beginWord], result)
+        return result
+
+    def dfs(self, link ,word, ew, idx, tmp, result):
+        if idx == len(link)-1:
+            if ew in link[idx][word]:
+                tmp.append(ew)
+                result.append(tmp[:])
+                tmp.pop()
+            return 
+        else:
+            for w in link[idx][word]:
+                if w in link[idx+1]:
+                    tmp.append(w)
+                    self.dfs(link, w, ew, idx+1, tmp, result)
+                    tmp.pop()
+        
+        
