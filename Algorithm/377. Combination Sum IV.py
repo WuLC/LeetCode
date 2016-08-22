@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-08-22 14:11:51
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-22 22:12:50
+# @Last Modified time: 2016-08-22 23:03:35
 # @Email: liangchaowu5@gmail.com
 
 # method 1
@@ -88,7 +88,7 @@ class Solution(object):
         return count
 
 
-# method 4, DP from bottom to top，while DP in the method 3 is from top to buttom, AC
+# method 4, DP from bottom to top，while DP in the method 3 is from top to bottom, AC
 class Solution(object):
     def combinationSum4(self, nums, target):
         """
