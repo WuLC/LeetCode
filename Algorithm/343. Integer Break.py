@@ -2,11 +2,11 @@
 # @Author: WuLC
 # @Date:   2016-08-22 09:13:55
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-22 09:14:28
+# @Last Modified time: 2016-08-22 09:26:48
 # @Email: liangchaowu5@gmail.com
 
 # Dynamic Programming
-# pay attention that this 
+# pay attention that some numbers are larger than the maximum product after seperating
 class Solution(object):
     def integerBreak(self, n):
         """
