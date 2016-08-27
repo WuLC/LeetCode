@@ -2,9 +2,10 @@
 # @Author: WuLC
 # @Date:   2016-08-27 20:24:48
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-27 20:24:53
+# @Last Modified time: 2016-08-27 20:26:14
 # @Email: liangchaowu5@gmail.com
 
+# O(n) time, O(n) space without division
 class Solution(object):
     def productExceptSelf(self, nums):
         """
