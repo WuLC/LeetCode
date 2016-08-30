@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: LC
 # @Date:   2016-01-21 09:28:43
-# @Last modified by:   LC
-# @Last Modified time: 2016-04-10 16:23:40
+# @Last modified by:   WuLC
+# @Last Modified time: 2016-08-30 16:53:09
 # @Email: liangchaowu5@gmail.com
 
 
@@ -47,9 +47,8 @@ if __name__ == '__main__':
 
 '''
 
-#实际AC通过代码
-#只需要写出函数即可
 
+# O(n^2) time, O(1) space, AC
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -61,7 +60,30 @@ class Solution(object):
         for i in range(len(nums)):
             for j in range(i+1,len(nums)):
                 if nums[i]+nums[j] == target:
-                    num_indice.append(i+1)
-                    num_indice.append(j+1)
+                    num_indice.append(i)
+                    num_indice.append(j)
                     return num_indice
 
+# O(nlgn) time, O(n) space, AC
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        inx = {}
+        for i in xrange(len(nums)):
+            inx.setdefault(nums[i], [])
+            inx[nums[i]].append(i)
+            
+        nums.sort()
+        left, right = 0, len(nums) - 1
+        while left < right:
+            tmp = nums[left] + nums[right]
+            if tmp > target:
+                right -= 1
+            elif tmp < target:
+                left += 1
+            else:
+                return sorted([inx[nums[left]].pop(), inx[nums[right]].pop()])
