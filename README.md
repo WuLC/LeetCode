@@ -1,4 +1,4 @@
 
-some solutions to the problems on [LeetCode][1] written in python,just for practice
+Solve problems on [LeetCode][1] in python
 
 [1]: https://leetcode.com/problemset/algorithms/
