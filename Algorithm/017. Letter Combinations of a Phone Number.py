@@ -1,10 +1,32 @@
 # -*- coding: utf-8 -*-
 # @Author: LC
 # @Date:   2016-03-10 18:09:28
-# @Last modified by:   LC
-# @Last Modified time: 2016-04-10 16:24:34
+# @Last modified by:   WuLC
+# @Last Modified time: 2016-09-03 20:58:47
 # @Email: liangchaowu5@gmail.com
 
+# backtracking 
+class Solution(object):
+    numDict ={'2':['a','b','c'],'3':['d','e','f'],'4':['g','h','i'],'5':['j','k','l'],'6':['m','n','o'],'7':['p','q','r','s'],'8':['t','u','v'],'9':['w','x','y','z']}
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        result = []
+        self.helper(0, digits, '', result)
+        return result
+    
+    def helper(self, index, digits, tmp, result):
+        if index == len(digits):
+            if tmp: # empty string
+                result.append(tmp)
+            return
+        for char in Solution.numDict[digits[index]]:
+            self.helper(index+1, digits, tmp+char, result)
+
+
+# combine a new letter with previous results
 class Solution(object):
     def letterCombinations(self, digits):
         """
