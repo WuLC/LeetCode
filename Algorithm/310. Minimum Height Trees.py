@@ -2,10 +2,10 @@
 # @Author: WuLC
 # @Date:   2016-09-04 23:13:39
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-04 23:14:06
+# @Last Modified time: 2016-09-07 22:39:48
 # @Email: liangchaowu5@gmail.com
 
-# DFS, TLE
+# DFS, O(n^2) time, TLE
 class Solution(object):
     def findMinHeightTrees(self, n, edges):
         """
@@ -35,4 +35,26 @@ class Solution(object):
             tmp = max(tmp, self.dfs(node, graph, visited))
         return tmp + 1
 
-# BFS, 
+# BFS, O(n) time and O(n) space
+# to find the middle nodes of the graph ,remove leaves level by level
+class Solution(object):
+    def findMinHeightTrees(self, n, edges):
+        if n == 1: 
+            return [0] 
+        adj = [set() for _ in xrange(n)]
+        for i, j in edges:
+            adj[i].add(j)
+            adj[j].add(i)
+    
+        leaves = [i for i in xrange(n) if len(adj[i]) == 1]
+    
+        while n > 2:
+            n -= len(leaves)
+            newLeaves = []
+            for i in leaves:
+                j = adj[i].pop()
+                adj[j].remove(i)
+                if len(adj[j]) == 1: newLeaves.append(j)
+            leaves = newLeaves
+        return leaves
+            
