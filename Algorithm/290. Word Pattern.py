@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-09-09 14:39:15
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-09 14:39:23
+# @Last Modified time: 2016-09-09 15:56:25
 # @Email: liangchaowu5@gmail.com
 
 class Solution(object):
@@ -10,7 +10,7 @@ class Solution(object):
         """
         :type pattern: str
         :type str: str
-        :rtype: bool
+        :rtype: b
         """
         mapping, mapped = {}, set()
         words = str.split()
