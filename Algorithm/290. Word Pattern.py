@@ -2,8 +2,9 @@
 # @Author: WuLC
 # @Date:   2016-09-09 14:39:15
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-09 15:56:25
+# @Last Modified time: 2016-09-10 11:20:13
 # @Email: liangchaowu5@gmail.com
+
 
 class Solution(object):
     def wordPattern(self, pattern, str):
