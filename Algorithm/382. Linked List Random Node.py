@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-09-17 11:18:10
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-17 11:19:04
+# @Last Modified time: 2016-09-17 17:08:50
 # @Email: liangchaowu5@gmail.com
 
 # Definition for singly-linked list.
@@ -34,3 +34,30 @@ class Solution(object):
         :rtype: int
         """
         return self.values[random.randint(0, self.n -1)]
+
+
+# reservoir sampling, O(1) space
+# referer: https://discuss.leetcode.com/topic/53753/brief-explanation-for-reservoir-sampling, k = 1 is this problem 
+class Solution(object):
+
+    def __init__(self, head):
+        """
+        @param head The linked list's head.
+        Note that the head is guaranteed to be not null, so it contains at least one node.
+        :type head: ListNode
+        """
+        self.head = head
+        
+    def getRandom(self):
+        """
+        Returns a random node's value.
+        :rtype: int
+        """
+        tmp, num, count = self.head, None, 0
+        while tmp:
+            if random.randint(0,count) == 0:
+                num = tmp.val
+            count += 1
+            tmp = tmp.next
+        return num
+
