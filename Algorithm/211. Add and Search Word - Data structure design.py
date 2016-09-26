@@ -2,9 +2,12 @@
 # @Author: WuLC
 # @Date:   2016-06-30 22:57:00
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-06-30 22:57:15
+# @Last Modified time: 2016-09-26 18:09:18
 # @Email: liangchaowu5@gmail.com
 
+
+# method 1, store words in a hashmap in terms of their length, AC
+# beat 98.16%
 class WordDictionary(object):
     def __init__(self):
         """
@@ -45,3 +48,75 @@ class WordDictionary(object):
                 else:
                     break
         return False
+
+
+
+# method 2, implement with Trie
+# beat 10%
+class TrieNode:
+    def __init__(self):
+        self.word = False
+        self.children = {}
+
+class WordDictionary(object):
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.root = TrieNode()
+
+    def addWord(self, word):
+        """
+        Adds a word into the data structure.
+        :type word: str
+        :rtype: void
+        """
+        curr = self.root
+        for char in word:
+            if char not in curr.children:
+                curr.children[char] = TrieNode()
+            curr = curr.children[char]
+        curr.word = True
+                
+
+    def search(self, word):
+        """
+        Returns if the word is in the data structure. A word could
+        contain the dot character '.' to represent any one letter.
+        :type word: str
+        :rtype: bool
+        """
+        def helper(root, word):
+            if len(word) == 0  and root.word == True:
+                return True
+            curr = root
+            for i in xrange(len(word)):
+                if word[i] == '.':
+                    next = curr.children.values()
+                elif word[i] in curr.children:
+                    next = [curr.children[word[i]]]
+                else:
+                    return False
+                return any([helper(node, word[i+1:]) for node in next])
+        return helper(self.root, word)
+
+# change helper   
+# manner 1, beat 23%
+def helper(root, word):
+    if len(word) == 0:
+        return root.word == True
+    if word[0] == '.':
+        next = root.children.values()
+    elif word[0] in root.children:
+        next = [root.children[word[0]]]
+    else:
+        return False
+    return any([helper(node, word[1:]) for node in next])
+
+# manner 2, 778 ms, beat 58.9%
+def helper(root, word):
+    if len(word) == 0:
+        return root.word == True
+    if word[0] != '.':
+        return word[0] in root.children and helper(root.children[word[0]], word[1:])
+    return any([helper(node, word[1:]) for node in root.children.values()])
