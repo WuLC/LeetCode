@@ -2,9 +2,12 @@
 # @Author: LC
 # @Date:   2016-09-27 23:58:09
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-27 23:58:16
+# @Last Modified time: 2016-09-28 00:06:57
 # @Email: liangchaowu5@gmail.com
 
+# stack
+# sort the people in ascending order for the first element and descending order for the second element
+# then pop the popple and insert them to the index which is the same as  the second elemnt
 class Solution(object):
     def reconstructQueue(self, people):
         """
