@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-09-27 23:58:09
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-28 00:07:53
+# @Last Modified time: 2016-09-28 23:04:12
 # @Email: liangchaowu5@gmail.com
 
 # stack
@@ -15,10 +15,8 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         def compare(x, y):
-            if  x[0] > y[0]:
-                return 1
-            elif x[0] < y[0]:
-                return -1
+            if  x[0] != y[0]:
+                return x[0] - y[0]
             else:
                 return y[1] - x[1]
         
