@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-09-29 20:02:27
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-29 20:04:18
+# @Last Modified time: 2016-09-29 21:14:14
 # @Email: liangchaowu5@gmail.com
 
 # Stack, similar to the problem of removing k digits so that the remaining digits is smallest of largest
@@ -28,5 +28,5 @@ class Solution(object):
                     stored.remove(result.pop())
                 stored.add(char)
                 result.append(char)
-        return ''.join(result[:len(set(s))])
+        return ''.join(result)
         
