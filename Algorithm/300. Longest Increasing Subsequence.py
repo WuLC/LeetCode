@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-08-19 17:56:52
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-08-21 08:03:13
+# @Last Modified time: 2016-10-07 20:04:22
 # @Email: liangchaowu5@gmail.com
 
 # method 1,dynamic programming , O(n^2)
@@ -23,6 +23,7 @@ class Solution(object):
         return result
 
 # method 2, DP and binary search， O(n*logn)
+# dp[i] stores the smallest tail element of all possible increasing subsequence with length i+1
 class Solution(object):
     def lengthOfLIS(self, nums):
         """
