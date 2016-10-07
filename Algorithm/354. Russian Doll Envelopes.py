@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-10-07 19:14:43
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-10-07 19:40:22
+# @Last Modified time: 2016-10-07 19:43:21
 # @Email: liangchaowu5@gmail.com
 
 # sort and DP
@@ -24,7 +24,7 @@ class Solution(object):
         return result
 
 
-# sort and find longest increasing subsequence
+# sort and find longest increasing subsequence(the same as problem 300)
 # O(nlgn), AC
 class Solution(object):
     def maxEnvelopes(self, envelopes):
