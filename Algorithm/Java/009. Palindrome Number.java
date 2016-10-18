@@ -2,12 +2,12 @@
 * Author: LC
 * Date:   2016-10-18 17:36:30
 * Last modified by:   WuLC
-* Last Modified time: 2016-10-18 17:44:28
+* Last Modified time: 2016-10-18 17:46:29
 * Email: liangchaowu5@gmail.com
 */
 
 // method 1
-// turn int to string and then judge
+// turn the number to string and then judge
 public class Solution 
 {
     public boolean isPalindrome(int x) 
@@ -25,7 +25,7 @@ public class Solution
 
 
 // method 2
-// operate on the number, just take and reverse the low half of the number
+// operate on the number, just take and reverse the lower half of the number
 public class Solution 
 {
     public boolean isPalindrome(int x) 
