@@ -2,7 +2,7 @@
 * Author: LC
 * Date:   2016-10-19 21:03:00
 * Last modified by:   WuLC
-* Last Modified time: 2016-10-19 21:05:32
+* Last Modified time: 2016-10-19 23:04:00
 * Email: liangchaowu5@gmail.com
 */
 
@@ -48,5 +48,36 @@ public class Solution
             return "";
         else
             return s.substring(i+1,j);
+    }
+}
+
+
+// more concise and efficient code 
+// use index instead of string to represent substring
+public class Solution 
+{
+    private int start=0, len=0;
+    public String longestPalindrome(String s) 
+    {
+        for(int i=0; i<s.length(); i++)
+        {
+            extendPalindrome(s, i, i);
+            extendPalindrome(s, i, i+1);
+        }
+        return s.substring(start, start + len);
+    }
+    
+    public void extendPalindrome(String s, int left, int right)
+    {
+        while (left>=0 && right<s.length() && s.charAt(left)==s.charAt(right))
+        {
+            left --;
+            right ++;
+        }
+        if (right - left - 1 > len)
+        {
+            len = right - left - 1;
+            start = left + 1;
+        }
     }
 }
