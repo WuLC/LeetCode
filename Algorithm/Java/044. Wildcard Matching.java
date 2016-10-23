@@ -2,12 +2,13 @@
 * Author: LC
 * Date:   2016-10-23 08:53:44
 * Last modified by:   WuLC
-* Last Modified time: 2016-10-23 08:58:38
+* Last Modified time: 2016-10-23 09:03:24
 * Email: liangchaowu5@gmail.com
 */
 
 
-//DP, 
+//DP
+//when '*' appears, discuss about the two cases when '*' represents nothing or any string
 public class Solution 
 {
     public boolean isMatch(String s, String p) 
