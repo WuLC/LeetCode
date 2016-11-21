@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-11-21 14:55:26
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-11-21 15:44:45
+# @Last Modified time: 2016-11-21 16:18:29
 # @Email: liangchaowu5@gmail.com
 
 # base on max subarray no larger than k in 1-D array and max sum of rectangle in an 2-D matrix
@@ -38,8 +38,8 @@ class Solution(object):
         return result
                         
                 
-# same idea as above, but with bitsect makes it faster
-# AC(1276ms), but theoretically its time complexity is the same as the above solution
+# same idea as above, but with module bisect makes it faster
+# AC(1276ms), time complexity O(col^2*row*log(row))
 import bisect
 class Solution(object):
     def maxSumSubmatrix(self, matrix, k):
@@ -58,8 +58,8 @@ class Solution(object):
                 cumulative_sum, curr_sum = [0], 0
                 for i in xrange(m):
                     curr_sum += sums[i]
-                    index = bisect.bisect_left(cumulative_sum, curr_sum - k)
+                    index = bisect.bisect_left(cumulative_sum, curr_sum - k) # binary search
                     if index != len(cumulative_sum):
                         result = max(result, curr_sum - cumulative_sum[index])
-                    bisect.insort(cumulative_sum, curr_sum)
+                    bisect.insort(cumulative_sum, curr_sum)                 # binary search
         return result
