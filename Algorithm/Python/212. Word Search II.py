@@ -2,16 +2,12 @@
 # @Author: WuLC
 # @Date:   2016-11-23 15:27:48
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-11-23 15:37:22
+# @Last Modified time: 2016-11-23 18:41:56
 # @Email: liangchaowu5@gmail.com
-
-
-
-
 
 # Trie and dfs 
 # referer: https://discuss.leetcode.com/topic/33246/java-15ms-easiest-solution-100-00
-# still TLE
+# AC when the network is good, TLE when the network is slow
 class TrieNode:
     def __init__(self):
         self.next = [None for i in xrange(26)]
