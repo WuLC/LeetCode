@@ -2,12 +2,12 @@
 * Author: WuLC
 * Date:   2016-11-27 13:37:16
 * Last modified by:   WuLC
-* Last Modified time: 2016-11-27 13:38:58
+* Last Modified time: 2016-11-27 13:39:43
 * Email: liangchaowu5@gmail.com
 */
 
 // DP
-// dp[i] represents the longest valid parentheses that ends at s[i]
+// dp[i] represents the length of the longest valid parentheses that ends with s[i]
 
 public class Solution 
 {
