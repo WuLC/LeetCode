@@ -2,11 +2,11 @@
 # @Author: LC
 # @Date:   2016-12-06 15:12:56
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-12-06 15:19:30
+# @Last Modified time: 2016-12-06 15:20:59
 # @Email: liangchaowu5@gmail.com
 
 # time complexity: O(n)
-# find the longest continous substrings that end with defferent characters in p
+# find the longest continuous substrings that end with different characters in p
 # thus the length of the longest continous substring that ends with certain character 
 # is the number of the substrings in p that ends with certain character 
 # for example: 'abcbc', the longest continous substring the ends with 'c' is 'abc', thus the number of substrings that in s is 3(abc,bc,c)
