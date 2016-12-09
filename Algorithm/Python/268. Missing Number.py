@@ -2,10 +2,11 @@
 # @Author: WuLC
 # @Date:   2016-07-22 22:26:24
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-07-22 22:28:56
+# @Last Modified time: 2016-12-09 19:00:54
 # @Email: liangchaowu5@gmail.com
 
-# method 1,bit manipulation
+# method 1, bit manipulation
+# if A = B^c , then c = A^B
 class Solution(object):
     def missingNumber(self, nums):
         """
@@ -17,6 +18,9 @@ class Solution(object):
             result ^= i
             result ^= nums[i]
         return result
+        # one-line solution of the above code
+        # return reduce(lambda x,y:x^y, xrange(len(nums)+1))^reduce(lambda x,y:x^y, nums)
+        
 
 # method 2, sum
 class Solution(object):
