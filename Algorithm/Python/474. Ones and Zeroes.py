@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-12-17 11:35:46
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-12-17 22:26:36
+# @Last Modified time: 2016-12-17 23:49:08
 # @Email: liangchaowu5@gmail.com
 
 
@@ -38,6 +38,7 @@ class Solution(object):
             
 
 # DP, from higher indices to lower indices
+# get right answer, but TLE 
 from collections import Counter
 class Solution(object):
     def findMaxForm(self, strs, m, n):
