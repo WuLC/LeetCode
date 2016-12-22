@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-12-21 21:16:46
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-12-21 21:20:21
+# @Last Modified time: 2016-12-22 12:56:26
 # @Email: liangchaowu5@gmail.com
 
 
@@ -65,3 +65,31 @@ class Solution(object):
             else:
                 root.val = curr.val
                 root.right = curr.right
+
+
+# recursive method, more consice and understandable
+class Solution(object):
+    def deleteNode(self, root, key):
+        """
+        :type root: TreeNode
+        :type key: int
+        :rtype: TreeNode
+        """
+        if root == None: return None
+        if key > root.val:
+            root.right = self.deleteNode(root.right, key)
+        elif key < root.val:
+            root.left = self.deleteNode(root.left, key)
+        else:
+            if root.left == None:
+                return root.right
+            if root.right == None:
+                return root.left
+            # find the max node in the left or min node in the right
+            curr = root.left
+            while curr.right:
+                curr = curr.right
+            root.val = curr.val
+            # delete the node to be replaced
+            root.left = self.deleteNode(root.left, curr.val)
+        return root
