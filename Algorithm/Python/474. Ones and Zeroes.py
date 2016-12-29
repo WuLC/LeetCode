@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-12-17 11:35:46
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-12-17 23:49:08
+# @Last Modified time: 2016-12-29 18:15:57
 # @Email: liangchaowu5@gmail.com
 
 
@@ -37,6 +37,7 @@ class Solution(object):
         return count
             
 
+
 # DP, from higher indices to lower indices
 # get right answer, but TLE 
 from collections import Counter
@@ -60,4 +61,32 @@ class Solution(object):
                     dp[i][j] = max(dp[i-count['0']][j-count['1']]+1, dp[i][j])
         return dp[m][n]
                     
-        
+# use self-constructed count function can AC, WTF
+class Solution(object):
+    def findMaxForm(self, strs, m, n):
+        """
+        :type strs: List[str]
+        :type m: int
+        :type n: int
+        :rtype: int
+        """
+        def count(str):
+            zero, one = 0, 0
+            for char in str:
+                if char == '0':
+                    zero += 1
+                else:
+                    one += 1
+            return zero, one
+            
+        dp = [[0 for i in xrange(n+1)] for j in xrange(m+1)]
+        for str in strs:
+            zeros, ones = count(str)
+            for i in reversed(xrange(m+1)):
+                if i < zeros:
+                    break
+                for j in reversed(xrange(n+1)):
+                    if j < ones:
+                        break
+                    dp[i][j] = max(dp[i-zeros][j-ones]+1, dp[i][j])
+        return dp[m][n]
