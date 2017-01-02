@@ -2,12 +2,11 @@
 * Author: WuLC
 * Date:   2017-01-02 18:53:40
 * Last modified by:   WuLC
-* Last Modified time: 2017-01-02 18:54:40
+* Last Modified time: 2017-01-02 20:24:09
 * Email: liangchaowu5@gmail.com
 */
 
-// set four directions initially
-// then use just one 
+// set four directions beforehand, then just need one for loop
 public class Solution 
 {
     public int[][] generateMatrix(int n) 
