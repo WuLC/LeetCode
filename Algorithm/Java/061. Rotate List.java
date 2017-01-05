@@ -2,7 +2,7 @@
 * Author: WuLC
 * Date:   2017-01-05 20:24:55
 * Last modified by:   WuLC
-* Last Modified time: 2017-01-05 20:32:29
+* Last Modified time: 2017-01-05 20:34:22
 * Email: liangchaowu5@gmail.com
 */
 
@@ -25,6 +25,8 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+// simplify k so that  k < length of the list, then use two pointers to traverse the list 
 public class Solution 
 {
     public ListNode rotateRight(ListNode head, int k) 
