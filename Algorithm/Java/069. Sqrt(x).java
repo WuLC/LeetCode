@@ -2,9 +2,9 @@
 * @Author: WuLC
 * @Date:   2017-01-14 22:06:30
 * @Last Modified by:   WuLC
-* @Last Modified time: 2017-01-14 22:07:25
+* @Last Modified time: 2017-01-14 22:34:09
+* @Email: liangchaowu5@gmail.com
 */
-
 
 // binary search, set right pointer to the sqrt(Integer.max_value)
 public class Solution 
