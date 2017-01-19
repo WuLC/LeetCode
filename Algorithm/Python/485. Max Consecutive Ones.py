@@ -2,11 +2,11 @@
 # @Author: LC
 # @Date:   2017-01-19 12:53:09
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-01-19 12:53:28
+# @Last Modified time: 2017-01-19 13:08:24
 # @Email: liangchaowu5@gmail.com
 
 
-# constanct space dynamic programming
+# constant space dynamic programming
 
 class Solution(object):
     def findMaxConsecutiveOnes(self, nums):
