@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-02-02 21:34:27
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-02-03 22:17:05
+# @Last Modified time: 2017-02-04 23:59:01
 # @Email: liangchaowu5@gmail.com
 
 
@@ -26,7 +26,6 @@ class Solution(object):
         else:
             for flag in [1,-1]:
                 self.dfs(idx+1, count+flag*nums[idx], S, nums)
-
 
 # naive recursive, TLE
 class Solution(object):
