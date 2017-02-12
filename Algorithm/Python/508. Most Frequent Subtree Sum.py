@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-02-13 00:11:34
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-02-13 00:11:50
+# @Last Modified time: 2017-02-13 00:12:54
 # @Email: liangchaowu5@gmail.com
 
 
@@ -16,7 +16,6 @@
 
 
 # recursive
-# 
 class Solution(object):
     def __init__(self):
         self.count = None
