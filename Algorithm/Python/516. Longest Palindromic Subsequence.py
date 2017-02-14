@@ -2,11 +2,11 @@
 # @Author: WuLC
 # @Date:   2017-02-14 11:30:37
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-02-14 13:50:53
+# @Last Modified time: 2017-02-14 13:51:20
 # @Email: liangchaowu5@gmail.com
 
 
-# two dementional dp, time O(n^2), space O(n^2)
+# two dimentional dp, time O(n^2), space O(n^2)
 # Java can AC , but Python get TLE
 class Solution(object):
     def longestPalindromeSubseq(self, s):
