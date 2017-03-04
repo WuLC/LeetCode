@@ -2,11 +2,13 @@
 * @Author: WuLC
 * @Date:   2017-03-04 14:42:32
 * @Last Modified by:   WuLC
-* @Last Modified time: 2017-03-04 14:43:08
+* @Last Modified time: 2017-03-04 21:14:38
 * @Email: liangchaowu5@gmail.com
 */
 
-// naive dp, O(n^2) time, O(n^2) space
+// dp, dp[i] represents the last steps that can reach position i
+// time: average O(n^2), worst O(n^3)
+// space:O(n^2) 
 public class Solution 
 {
     public boolean canCross(int[] stones) 
@@ -33,5 +35,36 @@ public class Solution
             steps.add(tmp);
         }
         return steps.get(stones.length-1).size()!= 0;
+    }
+}
+
+
+// dp, dp[i] represents the steps that position i can reach
+// time: average O(n), worst O(n^2)
+// space: O(n)
+public class Solution 
+{
+    public boolean canCross(int[] stones) 
+    {
+        HashMap<Integer, HashSet<Integer>> steps = new HashMap<Integer, HashSet<Integer>>();
+        for(int i=0; i < stones.length; i++)
+            steps.put(stones[i], new HashSet<Integer>());
+        steps.get(0).add(1);
+        for(int i=0; i < stones.length; i++)
+        {
+            for(int step : steps.get(stones[i]))
+            {
+                if (step+stones[i] == stones[stones.length-1]) return true;
+                int dest = step+stones[i];
+                if(steps.containsKey(dest))
+                {
+                    steps.get(dest).add(step);
+                    steps.get(dest).add(step+1);
+                    if(step - 1 > 0) steps.get(dest).add(step-1);
+                }
+            }
+        }
+        return false;
+        
     }
 }
