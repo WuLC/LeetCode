@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2017-03-24 23:59:51
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-03-25 00:00:09
+# @Last Modified time: 2017-03-25 00:07:21
 # @Email: liangchaowu5@gmail.com
 
 # Definition for a binary tree node.
@@ -29,7 +29,6 @@ class Solution(object):
         return max(self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right), height)
     
     def get_height(self, root):
-        if root == None:
+        if root == None or (root.left == None and root.right == None):
             return 0
-        tmp = max(self.get_height(root.left), self.get_height(root.right))
-        return tmp+1 if root.left or root.right else 0
+        return max(self.get_height(root.left), self.get_height(root.right))+1
