@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-03-28 20:46:11
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-03-29 12:57:29
+# @Last Modified time: 2017-03-29 12:59:45
 # @Email: liangchaowu5@gmail.com
 
 
@@ -45,8 +45,8 @@ class Solution(object):
 
 # bfs, AC
 # start bfs from nodes that are 0, and reach as many nodes as possible
-# push reachable nodes into queue
-# then update the distance of other nodes when there are shorter paths
+# update the distance of other nodes when the current distance is shorter than the distance of other nodes
+# then push reachable nodes into queue
 class Solution(object):
     def updateMatrix(self, matrix):
         """
