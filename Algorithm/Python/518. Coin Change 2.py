@@ -2,11 +2,12 @@
 # @Author: WuLC
 # @Date:   2017-04-09 13:36:43
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-04-09 13:36:58
+# @Last Modified time: 2017-04-09 13:37:32
 # @Email: liangchaowu5@gmail.com
 
 
 # dynamic programming
+# traverse coins instead of amount firstly
 class Solution(object):
     def change(self, amount, coins):
         """
