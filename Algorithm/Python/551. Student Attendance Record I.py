@@ -2,11 +2,11 @@
 # @Author: WuLC
 # @Date:   2017-04-17 00:24:43
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-04-17 00:25:03
+# @Last Modified time: 2017-04-17 00:25:25
 # @Email: liangchaowu5@gmail.com
 
 
-# simply count
+# simple counting
 class Solution(object):
     def checkRecord(self, s):
         """
