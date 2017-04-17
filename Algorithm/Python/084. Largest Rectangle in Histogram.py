@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2016-05-22 10:29:29
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-05-22 11:30:59
+# @Last Modified time: 2017-04-17 22:30:42
 # @Email: liangchaowu5@gmail.com
 
 # method 1, stack
@@ -14,7 +14,7 @@ class Solution(object):
         """
         max_re, n = 0, len(heights)
         stack = []
-        for i in xrange(n):
+        for i in xrange(n):3
             while len(stack)>0 and heights[i] < heights[stack[-1]]:
                 height = heights[stack.pop()]
                 width = i if len(stack) == 0 else i-stack[-1]-1
