@@ -2,13 +2,13 @@
 # @Author: WuLC
 # @Date:   2017-04-04 21:54:50
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-04-21 16:24:28
+# @Last Modified time: 2017-04-21 16:26:45
 # @Email: liangchaowu5@gmail.com
 
 
 # only those strings that appear just once can possibly be the Longest Uncommon Subsequence
 # judge if those strings that appear just once are subsequence of other strings, if not update the result with its length
-# time complexity: O(kn^2), k is the average length of strs and n is the number of strs
+# time complexity: O(kn^2), k is the average length of strs and n is the length of strs
 class Solution(object):
     def findLUSlength(self, strs):
         """
