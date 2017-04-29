@@ -2,7 +2,7 @@
 * Author: LC
 * Date:   2017-04-29 09:56:45
 * Last modified by:   WuLC
-* Last Modified time: 2017-04-29 10:00:53
+* Last Modified time: 2017-04-29 10:02:41
 * Email: liangchaowu5@gmail.com
 */
 
@@ -62,3 +62,7 @@ public class Solution
         return nodes;
     }
 }
+
+
+// method2: short post order traversal
+// referer: https://discuss.leetcode.com/topic/11444/my-short-post-order-traversal-java-solution-for-share
