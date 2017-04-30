@@ -2,7 +2,7 @@
 * Author: WuLC
 * Date:   2017-04-30 10:38:51
 * Last modified by:   WuLC
-* Last Modified time: 2017-04-30 11:03:56
+* Last Modified time: 2017-04-30 11:06:06
 * Email: liangchaowu5@gmail.com
 */
 
@@ -47,7 +47,7 @@ public class Solution
 }
 
 
-// referer solution, still is backtrack with dfs ,but much faster 
+// referer solution, still backtrack with dfs ,but much faster, take about 3 ms
 // avoid duplicate results by avoiding adding duplicate numbers at each iteration
 
 public class Solution 
