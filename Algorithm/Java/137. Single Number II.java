@@ -25,3 +25,20 @@ public class Solution
         return result;
     }
 }
+
+
+// more concise solution
+// referer: https://discuss.leetcode.com/topic/2031/challenge-me-thx/17
+public class Solution 
+{
+    public int singleNumber(int[] nums) 
+    {
+        int ones = 0, twos = 0;
+        for(int num:nums)
+        {
+            ones = ((ones ^ num) & ~twos);
+            twos = ((twos ^ num) & ~ones);
+        }
+        return ones;
+    }
+}
