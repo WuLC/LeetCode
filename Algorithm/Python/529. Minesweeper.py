@@ -2,11 +2,11 @@
 # @Author: WuLC
 # @Date:   2017-03-03 11:37:50
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-03-03 11:39:15
+# @Last Modified time: 2017-05-24 18:10:21
 # @Email: liangchaowu5@gmail.com
 
 
-# dfs
+# dfs, AC
 class Solution(object):
     def updateBoard(self, board, click):
         """
@@ -42,4 +42,36 @@ class Solution(object):
                 self.dfs(board, pos[0], pos[1], m, n)
 
 
-// 
+# bfs, TLE
+from collections import deque
+class Solution(object):
+    def updateBoard(self, board, click):
+        """
+        :type board: List[List[str]]
+        :type click: List[int]
+        :rtype: List[List[str]]
+        """
+        m, n = len(board), len(board[0])
+        r, c = click
+        if board[r][c] == 'M':
+            board[r][c] = 'X'
+        else:
+            # bfs
+            queue = deque()
+            queue.append((r,c))
+            while len(queue) > 0:
+                r, c = queue.popleft()
+                count = 0
+                for i in [-1, 0, 1]:
+                    for j in [-1, 0, 1]:
+                        if 0 <= r+i < m and 0 <= c+j < n and board[r+i][c+j] == 'M':
+                            count += 1
+                if count != 0:
+                    board[r][c] = str(count)
+                else:
+                    board[r][c] = 'B'
+                    for i in [-1, 0, 1]:
+                        for j in [-1, 0, 1]:
+                            if 0 <= r+i < m and 0 <= c+j < n and board[r+i][c+j] == 'E':
+                                queue.append((r+i, c+j))
+        return board
