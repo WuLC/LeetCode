@@ -2,7 +2,7 @@
 * @Author: WuLC
 * @Date:   2017-05-26 20:13:59
 * @Last Modified by:   WuLC
-* @Last Modified time: 2017-05-26 20:14:37
+* @Last Modified time: 2017-05-26 20:36:15
 * @Email: liangchaowu5@gmail.com
 */
 
@@ -48,5 +48,27 @@ public class Solution
         }
         p1.next = null;
         return dummy.next;
+    }
+}
+
+
+// solution with just O(1) space
+public class Solution 
+{
+   public ListNode deleteDuplicates(ListNode head) 
+   {
+        if(head==null) return null;
+        ListNode FakeHead = new ListNode(0);
+        FakeHead.next = head;
+        ListNode pre = FakeHead;
+        ListNode cur = head;
+        while(cur != null)
+        {
+            while(cur.next != null && cur.val == cur.next.val) cur = cur.next;
+            if(pre.next == cur) pre = pre.next;
+            else pre.next = cur.next;
+            cur = cur.next;
+        }
+        return FakeHead.next;
     }
 }
