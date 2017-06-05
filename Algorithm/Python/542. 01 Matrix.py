@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-03-28 20:46:11
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-03-29 12:59:45
+# @Last Modified time: 2017-06-05 21:17:31
 # @Email: liangchaowu5@gmail.com
 
 
@@ -72,4 +72,39 @@ class Solution(object):
                 if 0 <= ni < m and 0 <= nj < n and (matrix[ni][nj] == -1 or matrix[ni][nj] > distance):
                     matrix[ni][nj] = distance
                     queue.append((ni, nj, distance))
+        return matrix
+
+
+
+# bfs, similar to the above solution, but don't store the distance in the queue
+from collections import deque
+class Solution(object):
+    def updateMatrix(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        m, n = len(matrix), len(matrix[0])
+        queue = deque()
+        for i in xrange(m):
+            for j in xrange(n):
+                if matrix[i][j] == 0:
+                    queue.append((i, j))
+                else:
+                    matrix[i][j] = -1
+        
+        distance = 1
+        directions = [[-1,0], [1, 0], [0, -1], [0, 1]]
+        while len(queue) != 0:
+            next = deque()
+            while len(queue) != 0:
+                cx, cy = queue.popleft()
+                for dx, dy in directions:
+                    x = cx + dx
+                    y = cy + dy
+                    if 0 <= x < m and 0 <= y < n and (matrix[x][y] == -1 or matrix[x][y] > distance):
+                        matrix[x][y] = distance
+                        next.append((x, y))
+            queue = next
+            distance += 1
         return matrix
