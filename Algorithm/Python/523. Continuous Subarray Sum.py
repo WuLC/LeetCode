@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-03-05 23:06:01
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-03-06 12:52:32
+# @Last Modified time: 2017-06-07 00:02:49
 # @Email: liangchaowu5@gmail.com
 
 
@@ -26,7 +26,7 @@ class Solution(object):
                 
             
 
-# hashtable, O(n)
+# presum + hashtable, O(n)
 # referer: https://discuss.leetcode.com/topic/80793/java-o-n-time-o-k-space
 class Solution(object):
     def checkSubarraySum(self, nums, k):
@@ -46,4 +46,5 @@ class Solution(object):
             else:
                 mapping[count] = i
         return False
-            
+
+         
