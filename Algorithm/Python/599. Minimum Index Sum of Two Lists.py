@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2017-06-06 09:01:31
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-06-06 09:01:46
+# @Last Modified time: 2017-06-06 22:00:33
 # @Email: liangchaowu5@gmail.com
 
 
@@ -21,7 +21,7 @@ class Solution(object):
         for i in xrange(len(list2)):
             s2 = list2[i]
             if s2 in count1:
-                smallest = i + count1[s2] if smallest == None else  min(smallest, i + count1[s2])
+                smallest = i + count1[s2] if smallest == None else min(smallest, i + count1[s2])
         result = []
         for i in xrange(len(list2)):
             s2 = list2[i]
