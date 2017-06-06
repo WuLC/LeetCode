@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-06-06 21:47:07
 # @Last modified by:   WuLC
-# @Last Modified time: 2017-06-06 21:47:32
+# @Last Modified time: 2017-06-06 22:17:02
 # @Email: liangchaowu5@gmail.com
 
 
@@ -25,4 +25,17 @@ class Solution(object):
         return count
 
 
-# 
+# O(n), hashmap 
+# referer: https://discuss.leetcode.com/topic/87866/python-simple-with-explanation
+from collections import defaultdict
+class Solution(object):
+    def subarraySum(self, nums, k):
+        count = defaultdict(int)
+        count[0] = 1
+        result = 0
+        accu = 0
+        for num in nums:
+            accu += num
+            result += count[accu - k]
+            count[accu] += 1
+        return result
