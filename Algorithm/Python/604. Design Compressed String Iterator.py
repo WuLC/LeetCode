@@ -2,10 +2,10 @@
 # @Author: LC
 # @Date:   2017-06-11 12:00:07
 # @Last modified by:   LC
-# @Last Modified time: 2017-06-11 12:01:00
+# @Last Modified time: 2017-06-11 12:01:40
 # @Email: liangchaowu5@gmail.com
 
-# seperate letters from numbers
+# saperate letters from numbers
 class StringIterator(object):
 
     def __init__(self, compressedString):
