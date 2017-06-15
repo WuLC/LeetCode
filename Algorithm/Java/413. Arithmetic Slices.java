@@ -2,12 +2,12 @@
 * @Author: WuLC
 * @Date:   2017-06-15 16:59:15
 * @Last Modified by:   WuLC
-* @Last Modified time: 2017-06-15 17:01:07
+* @Last Modified time: 2017-06-15 17:01:55
 * @Email: liangchaowu5@gmail.com
 */
 
 // O(n) time, O(1) space
-// find the longest arithmetic slice each time, then caculate all possible sub slices within this slice
+// find the longest arithmetic slice each time, then calculate all possible sub slices within this slice
 public class Solution 
 {
     public int numberOfArithmeticSlices(int[] A) 
