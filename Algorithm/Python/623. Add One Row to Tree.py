@@ -2,7 +2,7 @@
 # @Author: LC
 # @Date:   2017-06-18 10:51:51
 # @Last modified by:   LC
-# @Last Modified time: 2017-06-18 10:52:13
+# @Last Modified time: 2017-06-18 16:39:22
 # @Email: liangchaowu5@gmail.com
 
 # Definition for a binary tree node.
@@ -12,6 +12,7 @@
 #         self.left = None
 #         self.right = None
 
+# traverse the tree level by level
 class Solution(object):
     def addOneRow(self, root, v, d):
         """
