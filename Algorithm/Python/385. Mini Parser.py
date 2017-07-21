@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-06-30 14:24:01
 # @Last Modified by:   WuLC
-# @Last Modified time: 2017-06-30 14:24:13
+# @Last Modified time: 2017-06-30 20:16:52
 
 
 # """
@@ -54,4 +54,5 @@ class Solution(object):
         :type s: str
         :rtype: NestedInteger
         """
+        
         
