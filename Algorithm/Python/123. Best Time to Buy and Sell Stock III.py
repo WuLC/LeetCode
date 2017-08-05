@@ -2,11 +2,11 @@
 # @Author: WuLC
 # @Date:   2017-08-05 15:56:28
 # @Last Modified by:   WuLC
-# @Last Modified time: 2017-08-05 16:14:27
+# @Last Modified time: 2017-08-05 16:20:26
 
 
 # dp
-# dp[i+1][j] refers max profit up until prices[j] (Note: NOT ending with prices[ii]) using at most i transactions. 
+# dp[i+1][j] refers max profit up until prices[j] (Note: NOT ending with prices[j]) using at most i transactions. 
 # referer: https://discuss.leetcode.com/topic/4766/a-clean-dp-solution-which-generalizes-to-k-transactions
 
 # time O(kn^2), TLE
