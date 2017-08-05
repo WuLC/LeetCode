@@ -2,12 +2,12 @@
 * @Author: WuLC
 * @Date:   2017-08-05 16:45:26
 * @Last Modified by:   WuLC
-* @Last Modified time: 2017-08-05 16:45:52
+* @Last Modified time: 2017-08-05 16:46:09
 * @Email: liangchaowu5@gmail.com
 */
 
 
-// use two queues
+// use two stacks
 public class MyQueue {
     
     private Stack<Integer> in;
