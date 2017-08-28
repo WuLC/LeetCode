@@ -2,10 +2,10 @@
 * @Author: LC
 * @Date:   2017-08-26 12:31:56
 * @Last Modified by:   LC
-* @Last Modified time: 2017-08-26 12:32:05
+* @Last Modified time: 2017-08-28 20:54:37
 */
 
-// TLE
+// TLE in Java but AC in python
 class Solution 
 {
     public int longestSubstring(String s, int k) 
