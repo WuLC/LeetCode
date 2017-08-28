@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2016-09-18 23:51:04
 # @Last modified by:   WuLC
-# @Last Modified time: 2016-09-18 23:58:28
+# @Last Modified time: 2017-08-26 11:26:25
 # @Email: liangchaowu5@gmail.com
 
 # O(n^2) time, TLE
@@ -29,7 +29,7 @@ class Solution(object):
 
 
 # split the string by the characters whoses apprearing times is less than k
-# in terms of Master's threom, O(nlgn) time, AC
+# in terms of Master's theorem, O(nlgn) time, AC
 class Solution(object):
     def longestSubstring(self, s, k):
         """
