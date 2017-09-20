@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-09-20 11:10:06
 # @Last Modified by:   WuLC
-# @Last Modified time: 2017-09-20 12:36:26
+# @Last Modified time: 2017-09-20 12:39:07
 
 
 # the following method will lead to maximum recursion exceed with large input
@@ -26,7 +26,7 @@ class Solution(object):
             return self.isPalindrome(s, start + 1, end, count + 1) or self.isPalindrome(s, start, end - 1, count + 1) 
 
 
-# same mthoed above, but drop the recursive pattern
+# same method above, but drop the recursive pattern
 class Solution(object):
     def validPalindrome(self, s):
         """
