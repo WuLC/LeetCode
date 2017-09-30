@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-09-16 22:07:15
 # @Last Modified by:   WuLC
-# @Last Modified time: 2017-09-22 13:13:03
+# @Last Modified time: 2017-09-30 15:39:43
 
 # hashmap, compare words with same length
 class MagicDictionary(object):

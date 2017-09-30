@@ -2,8 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-09-27 10:10:55
 # @Last Modified by:   WuLC
-# @Last Modified time: 2017-09-27 10:22:38
-
+# @Last Modified time: 2017-09-30 15:31:08
 
 # modify from the last digit to the first digit
 # also remember to change all the digits after the modified digit to the possible smallest digit so as to get the smallest valid result
