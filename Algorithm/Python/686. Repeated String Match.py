@@ -2,7 +2,7 @@
 # @Author: WuLC
 # @Date:   2017-10-06 22:38:38
 # @Last Modified by:   WuLC
-# @Last Modified time: 2017-10-06 22:42:01
+# @Last Modified time: 2017-10-06 23:37:59
 
 
 # try three possibilities, slow
@@ -33,3 +33,21 @@ class Solution(object):
             if s1[i] == s2[0] and i + len(s2) <= len(s1) and s1[i: i + len(s2)] == s2:
                 return True
         return False
+
+# use in instead of function isSubstring
+class Solution(object):
+    def repeatedStringMatch(self, A, B):
+        """
+        :type A: str
+        :type B: str
+        :rtype: int
+        """
+        count = len(B)/len(A)
+        if B in A * count:
+            return count
+        elif B in A * (count + 1):
+            return count + 1
+        elif B in A * (count + 2):
+            return count + 2
+        else:
+            return -1
