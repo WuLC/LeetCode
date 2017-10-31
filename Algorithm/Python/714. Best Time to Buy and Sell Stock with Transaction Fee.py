@@ -53,11 +53,6 @@ class Solution(object):
 # same as method2, but change the space complexity from O(n^2) to O(n)
 class Solution(object):
     def maxProfit(self, prices, fee):
-        """
-        :type prices: List[int]
-        :type fee: int
-        :rtype: int
-        """
         if len(prices) == 0:
             return 0
         n = len(prices)
@@ -66,4 +61,15 @@ class Solution(object):
             pre_buy, pre_sell = buy, sell
             buy = max(pre_buy, pre_sell - prices[i] - fee) # decide whether to buy stock on the i-th day
             sell = max(pre_sell, pre_buy + prices[i])      # decide whether to sell stock on the i-th day
+        return sell
+
+# the above method assumes paying fee when buying
+# the following method assumes paying fee when selling
+class Solution(object):
+    def maxProfit(self, prices, fee):
+        sell, buy = 0, -prices[0]
+        for i in xrange(1, len(prices)):
+            pre_buy, pre_sell = buy, sell
+            buy = max(pre_buy, pre_sell - prices[i])
+            sell = max(pre_sell, pre_buy + prices[i] - fee)
         return sell
