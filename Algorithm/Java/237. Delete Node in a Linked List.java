@@ -18,7 +18,7 @@
 // assign the value of next node to the current one
 public class Solution 
 {
-    public void deleteNode(ListNode node) 
+    public void deleteNode(ListNode node)
     {
         while ( node.next.next != null )
         {
