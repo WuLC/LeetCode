@@ -26,3 +26,28 @@ class Solution
         return left;
     }
 }
+
+// method 2, two pointers
+// there will always be a cycle among the numbers, and the duplicate number must be the entry of the cycle
+// time complexity: O(n), space complexity: O(1)
+class Solution 
+{
+    public int findDuplicate(int[] nums) 
+    {
+        int slow = nums[0];
+        int fast = nums[nums[0]];
+        while (slow != fast)
+        {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        }
+        
+        fast = 0;
+        while(nums[fast] != nums[slow])
+        {
+            fast = nums[fast];
+            slow = nums[slow];
+        }
+        return nums[fast];
+    }
+}
