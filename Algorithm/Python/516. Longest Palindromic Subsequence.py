@@ -7,14 +7,15 @@
 
 
 # two dimentional dp, time O(n^2), space O(n^2)
-# Java can AC , but Python get TLE
+# Java can AC , but Python get TLE if not add thechecking part s == s[::-1] 
 class Solution(object):
     def longestPalindromeSubseq(self, s):
         """
         :type s: str
         :rtype: int
         """
-        if len(s) == 0: return 0
+        if s == s[::-1]:
+            return len(s)
         n = len(s)
         dp = [[0 for i in xrange(n)] for j in xrange(n)]
         for i in reversed(xrange(n)):
@@ -34,6 +35,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        if s == s[::-1]:
+            return len(s)
         n = len(s)
         dp = [[1]*2 for _ in xrange(n)]
         for j in xrange(n):
