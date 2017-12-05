@@ -39,3 +39,37 @@ class MyCalendar(object):
         else:
             return False
             
+
+# method 2
+# binary search with binary search tree
+# time complexity: bianry search O(logn), insertion O(1)
+
+class Node():
+    def __init__(self, s, e):
+        self.start = s
+        self.end = e
+        self.left = None
+        self.right = None
+
+class MyCalendar(object):
+    def __init__(self):
+        self.root = Node(0,0)
+    
+    def insert(self, start, end, node):
+        if start >= node.end:
+            if node.right:
+                return self.insert(start, end, node.right)
+            else:
+                node.right = Node(start, end)
+                return True
+        elif end <= node.start:
+            if node.left:
+                return self.insert(start, end, node.left)
+            else:
+                node.left = Node(start, end)
+                return True
+        else:
+            return False
+        
+    def book(self, start, end):
+        return self.insert(start, end, self.root)
