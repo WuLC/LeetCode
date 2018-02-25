@@ -25,8 +25,7 @@ class Solution(object):
         if not (0<=r<N and 0<=c<N):
             return 
         if K == 0:
-            if 0<=r<N and 0<=c<N:
-                self.count += 1
+            self.count += 1
             return
         for m in self.moves:
             self.helper(N, K-1, r+m[0], c+m[1])
