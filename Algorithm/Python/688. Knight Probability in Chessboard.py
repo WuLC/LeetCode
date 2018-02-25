@@ -29,3 +29,26 @@ class Solution(object):
             return
         for m in self.moves:
             self.helper(N, K-1, r+m[0], c+m[1])
+
+
+# dp, AC
+class Solution(object):
+    def knightProbability(self, N, K, r, c):
+        """
+        :type N: int
+        :type K: int
+        :type r: int
+        :type c: int
+        :rtype: float
+        """
+        moves = [[-2, -1], [-1, -2], [1, -2], [2, -1], [-2, 1], [-1, 2], [2, 1], [1, 2]]
+        dp0 = [[1 for i in xrange(N)] for j in xrange(N)]
+        for _ in xrange(K):
+            dp1 = [[0 for i in xrange(N)] for j in xrange(N)]
+            for i in xrange(N):
+                for j in xrange(N):
+                    for m in moves:
+                        if 0<=i+m[0]<N and 0<=j+m[1]<N:
+                            dp1[i][j] += dp0[i+m[0]][j+m[1]]
+            dp0 = dp1
+        return 1.0*dp0[r][c]/(8**K)
