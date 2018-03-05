@@ -44,7 +44,32 @@ class Solution(object):
                 position[0] = left
             if position[1] == -1 or position[1]<right:
                 position[1] = right
-            
-                
+
+## recursive            
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        result = [-1, -1]
+        self.helper(0, len(nums) - 1, nums, target, result)
+        return result
+    
+    
+    def helper(self, left, right, nums, target, result):
+        if left > right:
+            return
+        mid = left + ((right-left)>>1)
+        if nums[mid] < target:
+            self.helper(mid+1, right, nums, target, result)
+        elif nums[mid] > target:
+            self.helper(left, mid - 1, nums, target, result)
+        else:
+            result[0] = mid if result[0] == -1 else min(result[0], mid)
+            result[1] = max(result[1], mid)
+            self.helper(left, mid-1, nums, target, result)
+            self.helper(mid+1, right, nums, target, result)              
             
         
