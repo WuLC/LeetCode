@@ -27,4 +27,21 @@ class Solution(object):
                 return i+1
         
         return n+1 # all match
+
+ # more concise code
+ class Solution(object):
+    def firstMissingPositive(self, nums):
+        n = len(nums)
+        for i in xrange(n):
+            while 0<nums[i]<=n and nums[i] != i+1:
+                if nums[nums[i]-1] == nums[i]:
+                    break
+                tmp = nums[i]
+                nums[i] = nums[tmp-1]
+                nums[tmp-1] = tmp
         
+        for i in xrange(n):
+            if nums[i] != i+1:
+                return i+1  
+        return len(nums)+1
+                   
