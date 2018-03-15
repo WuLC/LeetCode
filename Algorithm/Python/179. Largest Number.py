@@ -32,11 +32,16 @@ class Solution:
         self.quick_sort(left+1, end, nums)
         
         
-# method ,build-in sort function
+# method 2 ,custom sort function
 class Solution:
     # @param {integer[]} nums
     # @return {string}
     def largestNumber(self, nums):
-        snums = [str(num) for num in nums]
-        snums.sort(cmp=lambda x,y: cmp(y+x,x+y))
-        return ''.join(snums).lstrip('0') or '0'
+        def compare(s1, s2):
+            if s1+s2 > s2+s1:
+                return -1
+            else:
+                return 1
+        ns = [str(num) for num in nums]
+        result = ''.join(sorted(ns, cmp=compare)).lstrip('0')
+        return result if len(result) != 0 else '0'
