@@ -3,8 +3,7 @@
 # Author: WuLC
 # EMail: liangchaowu5@gmail.com
 
-
-# bfs, TLE
+# dp
 from collections import deque, defaultdict
 class Solution(object):
     def findCheapestPrice(self, n, flights, src, dst, K):
@@ -20,17 +19,18 @@ class Solution(object):
         for f in flights:
             s, d, p = f
             route[s][d] = p
-
-        count, marker = 0, -1        
-        queue = deque([src, marker])
-        prices = {src:0}
-        while count <= K and len(queue) > 0:
-            city = queue.popleft()
-            if city == marker:
-                count += 1
-                queue.append(marker)
-            else:
-                for k, v in route[city].items():
-                    prices[k] = prices[city] + v if k not in prices else min(prices[k], prices[city] + v)
-                    queue.append(k)
-        return prices[dst] if dst in prices else -1
+        
+        count, result = 0, -1
+        curr = {src:0}
+        while count <= K:
+            next = {}
+            for s, p in curr.items():
+                for k, v in route[s].items():
+                    next[k] = p + v if k not in next else min(next[k], p+v)
+            if dst in next:
+                result = next[dst] if result == -1 else min(result, next[dst])
+            curr = next
+            count += 1
+        return result
+                    
+    
