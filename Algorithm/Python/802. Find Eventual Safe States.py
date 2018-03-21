@@ -29,7 +29,7 @@ class Solution(object):
         return True
                         
 
-# bfs-like
+# Topological sort
 # store the nodes with 0 out_degree in the queue, keep removing from the queue's head and add new nodes with 0 out_degree
 from collections import deque, defaultdict
 class Solution(object):
