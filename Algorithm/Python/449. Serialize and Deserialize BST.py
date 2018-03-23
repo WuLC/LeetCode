@@ -10,8 +10,8 @@
 #         self.left = None
 #         self.right = None
 
-# serialize function just return the result of preorder traversal
-# deserialize build the result of inorder traversal from the result of preorder traversal, then build the tree with these two results
+# serializing just returns the result of preorder traversal
+# deserializing builds the result of inorder traversal from the result of preorder traversal, then build the tree with these two results
 class Codec:
     def serialize(self, root):
         """Encodes a tree to a single string.
