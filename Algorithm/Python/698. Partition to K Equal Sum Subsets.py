@@ -12,27 +12,22 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
-        total = sum(nums)
-        if total % k != 0 or total < k or len(nums) < k:
-            return False
-        self.target = total/k
-        self.nums = sorted(nums, reverse = True)
-        if self.nums[0] > self.target:
+        total_sum = sum(nums)
+        if total_sum % k != 0 or max(nums) > total_sum/k or total_sum < k or len(nums) < k:
             return False
         self.visited = [0] * len(nums)
-        return self.dfs(k, 0, 0)
-    
-    
-    def dfs(self, k, idx, tmp):
-        if k==1:
+        self.target = total_sum/k
+        return self.helper(nums, k, 0, 0)
+        
+    def helper(self, nums, k, curr_sum, idx):
+        if k==0:
             return True
-        elif tmp == self.target:
-            return self.dfs(k-1, 0, 0)
-        else:
-            for i in xrange(idx, len(self.nums)):
-                if self.visited[i] == 0 and tmp + self.nums[i] <= self.target:
-                    self.visited[i] = 1
-                    if self.dfs(k, idx+1, tmp + self.nums[i]):
-                        return True
-                    self.visited[i] = 0
+        if curr_sum == self.target:
+            return self.helper(nums, k-1, 0, 0)
+        for i in xrange(idx, len(nums)):
+            if self.visited[i]==0:
+                self.visited[i] = 1
+                if self.helper(nums, k, curr_sum+nums[i], i+1):
+                    return True
+                self.visited[i] = 0
         return False
