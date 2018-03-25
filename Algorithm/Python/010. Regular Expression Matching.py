@@ -41,35 +41,18 @@ class Solution:
             return False
 
 # DP实现
-class Solution:
-    # @return a boolean
-    def isMatch(self, s, p):
-        dp = [ [False for i in range(len(p)+1)] for i in range(len(s)+1)]
-        dp[0][0] = True # dp[i][j]表示s[:i-1] 和 p[:j-1]是否符合正则表达
-        
-        # 处理s[1]在比较中用到的dp[0]的初始化问题，没有这段代码就出错例子(aab,c*a*b)
-        # 可以理解为当 S 为空时,所有的*都必须表示为前面字符的0个字符
-        for i in range(1,len(p)+1):
-            if p[i-1]=='*' and i>=2:
-                    dp[0][i]=dp[0][i-2]  
-
-        #DP 处理的核心代码
-        for i in range(1,len(s)+1):
-            for j in range(1,len(p)+1):
-                if p[j-1] == '.':
-                    dp[i][j] = dp[i-1][j-1] 
-                elif p[j-1] =='*':
-                    dp[i][j] = dp[i][j-1] or dp[i][j-2] or (dp[i-1][j] and (p[j-2] == s[i-1] or p[j-2] == '.'))
-                else:
-                    dp[i][j] = dp[i-1][j-1] and (s[i-1] == p[j-1])
-        return dp[len(s)][len(p)]
-   
-
-
-'''
-递归超时测试例子
-if __name__ == '__main__':
-    s = Solution()
-    print s.isMatch('aaaaaaaaaaaaab','a*a*a*a*a*a*a*a*a*a*c')
-
-'''
+class Solution(object):
+    def isMatch(self, s, pattern):
+        m, n = len(pattern), len(s)
+        dp = [[False for j in xrange(n+1)] for i in xrange(m+1)]
+        dp[0][0] = True
+        for i in xrange(1, m+1):
+            for j in xrange(n+1):
+                if j==0:
+                    if pattern[i-1] == '*' and i-2 >= 0:
+                        dp[i][j] = dp[i-2][j]
+                elif pattern[i-1] == s[j-1] or pattern[i-1] == '.':
+                    dp[i][j] = dp[i-1][j-1]
+                elif pattern[i-1] == '*':
+                    dp[i][j] = dp[i-2][j] or dp[i-1][j] or ((pattern[i-2] == s[j-1] or pattern[i-2] == '.') and dp[i][j-1])
+        return dp[m][n]

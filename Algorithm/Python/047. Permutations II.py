@@ -24,4 +24,25 @@ class Solution(object):
             result = new_result
         return result
                         
-        
+# divide and conquer
+class Solution(object):
+    def permuteUnique(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        nums.sort()
+        return self.helper(nums)
+    
+    def helper(self, nums):
+        result = []
+        if len(nums) == 1:
+            result.append(nums)
+        else:
+            for i in xrange(len(nums)):
+                if i > 0 and nums[i] == nums[i-1]:
+                    continue
+                else:
+                    for left in self.helper(nums[:i]+nums[i+1:]):
+                        result.append([nums[i]]+left)
+        return result

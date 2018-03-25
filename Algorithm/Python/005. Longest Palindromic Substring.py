@@ -5,37 +5,25 @@
 # @Last Modified time: 2016-04-10 16:23:53
 # @Email: liangchaowu5@gmail.com
  
-################################################
-#方法一：从长到短遍历字符串，判断每次得到的子字符串是否为回文字符串，时间复杂度为O(n^3)
-#将判断一个字符串是否为回文字符串封装成函数isPalindromic，但是leetcode提示找不到这个函数
-################################################
+# dp, O(n^2)
 class Solution(object):
-    def isPalindromic(self,s):
-        strLen=len(s)
-        flag=True
-        mid=0
-        if strLen%2==0:
-            mid=strLen/2
-        else:
-            mid=(strLen-1)/2
-            
-        for i in range(mid):
-            if s[i] != s[strLen-1-i]:
-                flag=False
-                break
-        return flag
-        
     def longestPalindrome(self, s):
         """
         :type s: str
         :rtype: str
         """
-        strLen=len(s)
-        for i in range(strLen): #the number of characters cut down each time 
-            for j in range(i+1):
-                subStr=s[j:strLen-i+1]
-                if self.isPalindromic(subStr):
-                    return subStr
+        n = len(s)
+        dp = [[False for j in xrange(n)] for i in xrange(n)]
+        result = ''
+        for i in reversed(xrange(n)):
+            for j in xrange(i, n):
+                if i == j:
+                    dp[i][j] = True
+                elif s[i] == s[j]:
+                    dp[i][j] = dp[i+1][j-1] if i+1<=j-1 else True
+                if dp[i][j] and j-i+1 > len(result):
+                    result = s[i:j+1]
+        return result   
     
     
 #################################################

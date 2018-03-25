@@ -44,7 +44,22 @@ class Solution(object):
             result = new_result
         return result
                     
-                    
+# divide and conquer
+class Solution(object):
+    def permute(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        result = []
+        if len(nums) == 1:
+            result.append(nums)
+        else:
+            for i in xrange(len(nums)):
+                for left in self.permute(nums[:i]+nums[i+1:]):
+                    result.append([nums[i]]+left)
+        return result
+
 if __name__ == '__main__':
     test = [1,2,3,4]
     s = Solution()
