@@ -32,3 +32,20 @@ class Solution(object):
             return self.helper(nums, i+1, right, k)
         else:
             return self.helper(nums, left, i-1, k) 
+        
+# solution 2, use heap to keep the k largest numbers
+import heapq
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        heap = []
+        for num in nums:
+            if len(heap) < k:
+                heapq.heappush(heap, num)
+            else:
+                heapq.heappushpop(heap, num)
+        return heap[0]
