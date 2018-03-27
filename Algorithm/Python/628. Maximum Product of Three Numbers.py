@@ -31,4 +31,25 @@ class Solution(object):
                         max_num = max(min_nums)
                         break
         return max(min_nums[0] * min_nums[1] * max(max_nums), max_nums[0] * max_nums[1] * max_nums[2])
-        
+
+# use priority queue
+import heapq
+class Solution(object):
+    def maximumProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        max_nums, min_nums = [], []
+        for num in nums:
+            if len(max_nums) < 3:
+                heapq.heappush(max_nums, num)
+            else:
+                heapq.heappushpop(max_nums, num)
+            if len(min_nums) < 3:
+                heapq.heappush(min_nums, -num)
+            else:
+                heapq.heappushpop(min_nums, -num)
+        return max(max_nums[0]*max_nums[1]*max_nums[2], -min_nums[1]*-min_nums[2]*max(max_nums[1], max_nums[2]))
+
+              
