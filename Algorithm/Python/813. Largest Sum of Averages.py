@@ -3,7 +3,7 @@
 # Author: WuLC
 # EMail: liangchaowu5@gmail.com
 
-# dp
+# dp, time complexity O(kn^2)
 # dp[k][j] represents the largest sum of averages while dividing k groups with nums[:j]
 class Solution(object):
     def largestSumOfAverages(self, A, K):
