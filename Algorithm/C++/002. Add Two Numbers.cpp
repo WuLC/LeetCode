@@ -16,27 +16,27 @@
  // addtion with carry
 class Solution 
 {
-public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
-    {
-        ListNode dummy(0), *p = &dummy;
-        int carry = 0;
-        while(l1 || l2 || carry)
+    public:
+        ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
         {
-            if(l1)
+            ListNode dummy(0), *p = &dummy;
+            int carry = 0;
+            while(l1 || l2 || carry)
             {
-                carry += l1->val;
-                l1 = l1->next;
+                if(l1)
+                {
+                    carry += l1->val;
+                    l1 = l1->next;
+                }
+                if(l2)
+                {
+                    carry += l2->val;
+                    l2 = l2->next;
+                }
+                p->next = new ListNode(carry%10);
+                carry /= 10;
+                p = p->next;
             }
-            if(l2)
-            {
-                carry += l2->val;
-                l2 = l2->next;
-            }
-            p->next = new ListNode(carry%10);
-            carry /= 10;
-            p = p->next;
+            return dummy.next;
         }
-        return dummy.next;
-    }
 };
