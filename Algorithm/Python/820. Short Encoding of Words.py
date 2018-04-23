@@ -15,7 +15,7 @@ class Solution(object):
         result, count = 0, 0
         for i in xrange(n):
             if i != n-1 and sorted_words[i] == sorted_words[i+1][:len(sorted_words[i])]:
-                    continue
+                continue
             result += len(sorted_words[i])
             count += 1
         return result+count
