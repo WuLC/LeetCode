@@ -23,3 +23,21 @@ class Solution
             else return left;
         }
 };
+
+
+// Newton method
+// use double instead of int
+class Solution 
+{
+    public:
+    int mySqrt(int x) 
+        {
+            double result = x, pre = 0, threshold = 0.0001;
+            while (std::abs(result - pre) > threshold)
+            {
+                pre = result;
+                result = (pre+(x/pre))/2.0;
+            }
+            return int(result);
+        }
+};
