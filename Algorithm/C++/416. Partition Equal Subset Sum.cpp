@@ -28,3 +28,25 @@ class Solution
         }
 };
 
+// dp, AC
+class Solution 
+{
+    public:
+        bool canPartition(vector<int>& nums) 
+        {
+            int sum = std::accumulate(nums.begin(), nums.end(), 0);
+            if(sum%2 != 0) return false;
+            int target = sum>>1;
+            bool dp[target+1] = {false};
+            dp[0] = true;
+            for(int num:nums)
+            {
+                for(int i=target; i>=num; i--) // traverse from end to start to avoid the case like [1, 2, 5] where 2 may be used repeatedly
+                {
+                    if (dp[i-num]) dp[i] = true;
+                    if (dp[target]) return true;
+                }
+            }
+            return false;
+        }
+};
