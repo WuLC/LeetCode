@@ -34,4 +34,27 @@ class Solution(object):
                 next_level.append(nodes[i].right)
         result.append(tmp)
         self.helper(next_level, result)
-        
+
+# another kind of recursive method
+class Solution(object):
+    def levelOrder(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        if root == None:
+            return []
+        result = [[root.val]]
+        left = self.levelOrder(root.left)
+        right = self.levelOrder(root.right)
+        i = 0
+        while i < len(left) and i < len(right):
+            result.append(left[i] + right[i])
+            i += 1
+        while i < len(left):
+            result.append(left[i])
+            i += 1
+        while i < len(right):
+            result.append(right[i])
+            i += 1
+        return result
