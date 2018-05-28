@@ -30,4 +30,24 @@ class Solution(object):
                 self.cache[curr] = prob
             return self.cache[curr]
         return helper(0, N, K, W)
-        
+
+
+# dp, O(n) time, AC
+class Solution(object):
+    def new21Game(self, N, K, W):
+        """
+        :type N: int
+        :type K: int
+        :type W: int
+        :rtype: float
+        """
+        dp = [1]
+        curr_sum = 1
+        base = 1.0/W
+        for i in xrange(1, N+1):
+            if i > W:
+                curr_sum -= dp[i-W-1]
+            dp.append(base*curr_sum)
+            if i < K:
+                curr_sum += dp[-1]
+        return min(1.0, sum(dp[i] for i in xrange(K, N+1)))
