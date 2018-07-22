@@ -4,6 +4,8 @@
 # EMail: liangchaowu5@gmail.com
 
 # binary search
+import math
+
 class Solution(object):
     def minEatingSpeed(self, piles, H):
         """
