@@ -3,6 +3,7 @@
 # Author: WuLC
 # EMail: liangchaowu5@gmail.com
 
+
 # change with ascii code
 class Solution(object):
     def toLowerCase(self, str):
