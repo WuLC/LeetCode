@@ -40,13 +40,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
-        left, right = self.cal_depth(root.left), self.cal_depth(root.right)
-        if left == right:
-            return root
-        elif left > right:
-            return self.subtreeWithAllDeepest(root.left)
-        else:
-            return self.subtreeWithAllDeepest(root.right)
+        return self.cal_depth(root)[1]
     
     def cal_depth(self, root):
         if root == None:
