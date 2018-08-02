@@ -29,11 +29,3 @@ class Solution(object):
             idx += 1
         result = [mapping[num].pop() if num in mapping and len(mapping[num])>0 else unused.pop() for num in B]
         return result
-        
-
-        
-            
-
-
-            
-            
