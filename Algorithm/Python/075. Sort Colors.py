@@ -23,41 +23,23 @@ class Solution(object):
                 cur += 1
             
         
-# method2, two pointers            
+# method2, three pointers
+# referer: https://en.wikipedia.org/wiki/Dutch_national_flag_problem      
 class Solution(object):
     def sortColors(self, nums):
         """
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        n = len(nums)
-        left, right = 0, n-1
-        while left<right:
-             while right > left and nums[right]==2:
-                 right -= 1
-             while right > left and nums[left] != 2:
-                 left += 1
-             if left >= right:
-                 break
-             nums[left],nums[right] = nums[right],nums[left]
-             left += 1
-             right -=1 
-        if left == right and nums[left] == 2:
-            right -= 1
-            
-        left = 0
-        while left< right:
-             while right > left and nums[right]==1:
-                 right -= 1
-             while right > left and nums[left] != 1:
-                 left += 1
-             if left >= right:
-                 break
-             nums[left],nums[right] = nums[right],nums[left]
-             left += 1
-             right -=1             
-            
+        i, j, n = 0, 0, len(nums)-1
+        while j <= n:
+            if nums[j] > 1:
+                nums[n], nums[j] = nums[j], nums[n]
+                n -= 1
+            elif nums[j] == 1:
+                j+=1
+            elif nums[j] < 1:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j += 1
         
-        
-                 
-            
