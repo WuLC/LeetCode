@@ -11,6 +11,7 @@ class KthLargest(object):
         :type nums: List[int]
         """
         self.nums = nums
+        self.k = k
         heapq.heapify(self.nums)
         while len(self.nums)>k:
             heapq.heappop(self.nums)
@@ -20,7 +21,10 @@ class KthLargest(object):
         :type val: int
         :rtype: int
         """
-        heapq.heappushpop(self.nums, val)
+        if len(self.nums) < self.k:
+            heapq.heappush(self.nums, val)
+        else:
+            heapq.heappushpop(self.nums, val)
         return self.nums[0]
 
     
