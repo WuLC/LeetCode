@@ -4,6 +4,7 @@
 # EMail: liangchaowu5@gmail.com
 
 # calculate surface at each point, then minus hidden area
+# referer: https://leetcode.com/problems/surface-area-of-3d-shapes/discuss/163414/C++Java1-line-Python-Minus-Hidden-Area
 class Solution(object):
     def surfaceArea(self, grid):
         """
