@@ -20,8 +20,7 @@ class Solution(object):
                     counter[tree[left]] -= 1
                     if counter[tree[left]]==0:
                         del counter[tree[left]]
-                    else:
-                        left += 1
+                    left += 1
                 counter[tree[right]] = 1
             else:
                 counter[tree[right]] += 1
