@@ -3,7 +3,7 @@
 # Author: WuLC
 # EMail: liangchaowu5@gmail.com
 
-# O(n) time, 
+# O(n) time, compare the left_max number with current number
 class Solution(object):
     def partitionDisjoint(self, A):
         """
