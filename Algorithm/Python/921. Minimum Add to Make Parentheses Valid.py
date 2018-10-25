@@ -12,12 +12,12 @@ class Solution(object):
         """
         left, right, result = 0, 0, 0
         for c in S:
-          if c == '(':
-            left += 1
-          else:
-            if left == 0:
-              result += 1
+            if c == '(':
+                left += 1
             else:
-              left -= 1
-        result += left
+                if left == 0:
+                    result += 1
+                else:
+                    left -= 1
+            result += left
         return result

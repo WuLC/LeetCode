@@ -13,14 +13,14 @@ class Solution(object):
         """
         left, right = 0, 0
         for c in S:
-          if c == '0':
-            right += 1
+            if c == '0':
+                right += 1
         
         result = right
         for c in S:
-          if c == '1':
-            left += 1
-          else:
-            right -= 1
-          result = min(left + right, result)  
+            if c == '1':
+                left += 1
+            else:
+                right -= 1
+            result = min(left + right, result)  
         return result
