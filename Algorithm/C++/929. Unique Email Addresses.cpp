@@ -13,7 +13,7 @@ class Solution {
         string tmp = "";
         int idx = 0;
         bool abandon = false;
-        while (email[idx] != '@'){
+        while (email[idx] != '@') {
           if (email[idx] == '+')
             abandon = true;
           else if (abandon == false && email[idx] != '.')
