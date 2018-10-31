@@ -7,7 +7,7 @@
 // prefix sum, applicable to not just 1 and 0
 func numSubarraysWithSum(A []int, S int) int {
 	var curr_sum, result = 0, 0
-	count := make(map[int]int)
+	var count = make(map[int]int)
 	count[0] = 1
 	for _, num := range A {
 		curr_sum += num
