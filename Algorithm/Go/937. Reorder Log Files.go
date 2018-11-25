@@ -29,8 +29,10 @@ func reorderLogFiles(logs []string) []string {
 		return letter_logs[i][strings.Index(letter_logs[i], " "):] < letter_logs[j][strings.Index(letter_logs[j], " "):]
 	})
 
-	for i := 0; i < len(digital_logs); i++ {
-		letter_logs = append(letter_logs, digital_logs[i])
-	}
-	return letter_logs
+	return append(letter_logs, digital_logs...)
+	// the following code is the same as the above line
+	// for i := 0; i < len(digital_logs); i++ {
+	// 	letter_logs = append(letter_logs, digital_logs[i])
+	// }
+	// return letter_logs
 }
