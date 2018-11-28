@@ -24,8 +24,6 @@ class Solution(object):
                 while p1 < len(pushed) and pushed[p1] != popped[p2]:
                     stack.append(pushed[p1])
                     p1 += 1
-                if p1 < len(pushed):
-                    p1, p2 = p1 + 1, p2 + 1
         while p2 < len(popped) and stack and popped[p2] == stack[-1]:
             p2 += 1
             stack.pop()
