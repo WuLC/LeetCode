@@ -8,20 +8,20 @@
 // greedy
 class Solution {
  public:
-    vector<int> diStringMatch(string S) {
-        vector<int> result;
-        int left = 0, right = S.length();
-        for (char c : S) {
-          if (c == 'I') {
-            result.push_back(left);
-            left++;
-          }
-          else {
-            result.push_back(right);
-            right--;
-          }
+  vector<int> diStringMatch(string S) {
+      vector<int> result;
+      int left = 0, right = S.length();
+      for (char c : S) {
+        if (c == 'I') {
+          result.push_back(left);
+          left++;
         }
-        result.push_back(left);
-        return result;
-    }
+        else {
+          result.push_back(right);
+          right--;
+        }
+      }
+      result.push_back(left);
+      return result;
+  }
 };
