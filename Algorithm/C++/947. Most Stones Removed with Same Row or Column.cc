@@ -77,7 +77,7 @@ class Solution1 {
   }
 };
 
-// solution 2, simpler, connect the row index and column index of the stones
+// solution 2, more concise, connect the row index and column index of the stones
 class Solution2 {
  public:
   int removeStones(vector<vector<int>>& stones) {
@@ -88,32 +88,32 @@ class Solution2 {
   }
 
   int Find(int val) {
-    if (parents.count(val) == 0) {
-      parents[val] = val;
-      rank[val] = 0;
+    if (parents_.count(val) == 0) {
+      parents_[val] = val;
+      rank_[val] = 0;
       islands++;
-    } else if (parents[val] != val) {
-      parents[val] = Find(parents[val]);
+    } else if (parents_[val] != val) {
+      parents_[val] = Find(parents_[val]);
     }
-    return parents[val];
+    return parents_[val];
   }
 
   void Union(int v1, int v2) {
     int p1 = Find(v1), p2 = Find(v2);
     if (p1 == p2) {
       return;
-    } else if (rank[p1] > rank[p2]) {
-      parents[p2] = p1;
-    } else if (rank[p1] < rank[p2]) {
-      parents[p1] = p2;
+    } else if (rank_[p1] > rank_[p2]) {
+      parents_[p2] = p1;
+    } else if (rank_[p1] < rank_[p2]) {
+      parents_[p1] = p2;
     } else {
-      parents[p2] = p1;
-      rank[p1]++;
+      parents_[p2] = p1;
+      rank_[p1]++;
     }
     islands--;
   }
 
  private:
-  unordered_map<int, int> parents, rank;
+  unordered_map<int, int> parents_, rank_;
   int islands = 0;
 };
