@@ -81,6 +81,39 @@ class Solution1 {
 class Solution2 {
  public:
   int removeStones(vector<vector<int>>& stones) {
-
+    for (auto s : stones) {
+      Union(s[0], s[1] + 10000);
+    }
+    return stones.size() - islands;
   }
+
+  int Find(int val) {
+    if (parents.count(val) == 0) {
+      parents[val] = val;
+      rank[val] = 0;
+      islands++;
+    } else if (parents[val] != val) {
+      parents[val] = Find(parents[val]);
+    }
+    return parents[val];
+  }
+
+  void Union(int v1, int v2) {
+    int p1 = Find(v1), p2 = Find(v2);
+    if (p1 == p2) {
+      return;
+    } else if (rank[p1] > rank[p2]) {
+      parents[p2] = p1;
+    } else if (rank[p1] < rank[p2]) {
+      parents[p1] = p2;
+    } else {
+      parents[p2] = p1;
+      rank[p1]++;
+    }
+    islands--;
+  }
+
+ private:
+  unordered_map<int, int> parents, rank;
+  int islands = 0;
 };
