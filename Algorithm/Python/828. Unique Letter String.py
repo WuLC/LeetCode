@@ -3,6 +3,7 @@
 # Author: WuLC
 # EMail: liangchaowu5@gmail.com
 
+# two pointers
 class Solution(object):
     def uniqueLetterString(self, S):
         """
