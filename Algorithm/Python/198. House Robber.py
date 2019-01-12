@@ -17,3 +17,18 @@ class Solution(object):
         for i in xrange(3, len(nums)):
             nums[i] = max(nums[i]+nums[i-2], nums[i]+nums[i-3])
         return max(nums)
+
+# dp in another way, when at certain index, robber may not rob this index
+# constant space
+class Solution(object):
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        p1, p2, p3 = 0, 0, 0
+        for num in nums:
+            tmp = max(p3, p2 + num)
+            p1, p2 = p2, p3
+            p3 = tmp
+        return p3
