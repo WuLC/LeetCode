@@ -26,9 +26,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        p1, p2, p3 = 0, 0, 0
+        previous, curr = 0, 0
         for num in nums:
-            tmp = max(p3, p2 + num)
-            p1, p2 = p2, p3
-            p3 = tmp
-        return p3
+            tmp = max(curr, previous + num)
+            previous, curr = curr, tmp
+        return curr
