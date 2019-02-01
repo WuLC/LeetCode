@@ -22,6 +22,3 @@ class Solution(object):
                 if days[j] < days[i] - 30:
                     break
         return dp[-1]
-
-
-    #def binary_search(days, left, right):
