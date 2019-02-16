@@ -5,8 +5,8 @@
  */
 
 
- // two pointers
- func subarraysWithKDistinct(A []int, K int) int {
+// two pointers
+func subarraysWithKDistinct(A []int, K int) int {
 	i, j, prefix, result := 0, 0, 0, 0
 	count := make(map[int]int)
 	for j < len(A) {
