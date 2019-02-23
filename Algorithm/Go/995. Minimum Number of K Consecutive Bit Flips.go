@@ -4,7 +4,7 @@
  * EMail: liangchaowu5@gmail.com
  */
 
-
+// greedy, flip when meeting 0
 // O(n) time, O(n) space
 func minKBitFlips(A []int, K int) int {
 	result, queue := 0, []int{}
@@ -18,6 +18,27 @@ func minKBitFlips(A []int, K int) int {
 		}
 	}
 	if len(queue) == 0 {
+		return result
+	} else {
+		return -1
+	}
+}
+
+
+// O(n) time, O(1) space
+func minKBitFlips(A []int, K int) int {
+	flips, result := 0, 0
+	for i, v := range A {
+		if (v == 0 && (flips&1) == 0) || (v == 1 && (flips&1) == 1) {
+			flips++
+			result++
+			A[i] -= 2
+		}
+		if  i-K+1 >= 0 && A[i-K+1] < 0 {
+			flips -= 1
+		}
+	}
+	if flips == 0 {
 		return result
 	} else {
 		return -1
