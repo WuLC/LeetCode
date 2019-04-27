@@ -30,25 +30,20 @@ class Solution(object):
 # stack and hashmap, O(n) time, O(n) space
 # traverse from left to right
 class Solution(object):
-    def nextGreaterElement(self, findNums, nums):
+    def nextGreaterElement(self, nums1, nums2):
         """
-        :type findNums: List[int]
-        :type nums: List[int]
+        :type nums1: List[int]
+        :type nums2: List[int]
         :rtype: List[int]
         """
-        result = []
-        stack = []
-        numsMap = {}
-        for num in nums:
+        stack, record = [], {}
+        for num in nums2:
             while stack and stack[-1] < num:
-                numsMap[stack.pop()] = num
+                record[stack.pop()] = num
             stack.append(num)
-        for num in findNums:
-            if num in numsMap:
-                result.append(numsMap[num])
-            else:
-                result.append(-1)
-        return result
+        for num in stack:
+            record[num] = -1
+        return [record[num] for num in nums1]
 
 
 # stack and hashmap, O(n) time, O(n) space
