@@ -27,7 +27,8 @@ class Solution(object):
         return result
 
 
-# stack and hashmap, O(n) time, O(n) space, AC
+# stack and hashmap, O(n) time, O(n) space
+# traverse from left to right
 class Solution(object):
     def nextGreaterElement(self, findNums, nums):
         """
@@ -48,3 +49,24 @@ class Solution(object):
             else:
                 result.append(-1)
         return result
+
+
+# stack and hashmap, O(n) time, O(n) space
+# traverse from right to left
+class Solution(object):
+    def nextGreaterElement(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        record, stack =  {}, []
+        for i in xrange(len(nums2) - 1, -1, -1):
+            while stack and stack[-1] < nums2[i]:
+                stack.pop()
+            if stack:
+                record[nums2[i]] = stack[-1]
+            else:
+                record[nums2[i]] = -1
+            stack.append(nums2[i])
+        return [record[num] for num in nums1]
