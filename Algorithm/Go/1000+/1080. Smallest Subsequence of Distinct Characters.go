@@ -1,36 +1,30 @@
 /*
- * Created on Sun Jun 09 2019 18:6:37
+ * Created on Sun Jun 09 2019 18:53:47
  * Author: WuLC
  * EMail: liangchaowu5@gmail.com
  */
 
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
-
-// simple recursive
-func sufficientSubset(root *TreeNode, limit int) *TreeNode {
-	if root.Left == nil && root.Right == nil {
-		if root.Val < limit {
-			return nil
-		} else {
-			return root
+// stack
+ func smallestSubsequence(text string) string {
+	stack := []rune{}
+	counter, stored := make(map[rune]int), make(map[rune]bool)
+	for _, c := range text {
+		counter[c]++
+	}
+	for _, c := range text {
+		if val, ok := stored[c]; ok && val {
+			counter[c]--
+			continue
 		}
+		n := len(stack) - 1
+		for len(stack) > 0 && stack[n] > c && counter[stack[n]] > 1 {
+			counter[stack[n]]--
+			stored[stack[n]] = false
+			stack = stack[:n]
+			n = len(stack) - 1
+		}
+		stack = append(stack, c)
+        stored[c] = true
 	}
-	if root.Left != nil {
-		root.Left = sufficientSubset(root.Left, limit - root.Val)
-	} 
-	if root.Right != nil {
-		root.Right = sufficientSubset(root.Right, limit - root.Val)
-	}
-	if root.Left != nil || root.Right != nil {
-		return root
-	} else {
-		return nil
-	}
+	return string(stack)	
 }

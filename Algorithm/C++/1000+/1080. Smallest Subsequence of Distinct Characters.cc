@@ -1,36 +1,44 @@
 /*
- * Created on Sun Jun 09 2019 18:6:27
+ * Created on Sun Jun 09 2019 18:26:26
  * Author: WuLC
  * EMail: liangchaowu5@gmail.com
  */
 
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
 
- // recursive 
+// stack
+#include <string>
+#include <stack>
+#include <unordered_set>
+#include <unordered_map>
+
 class Solution {
  public:
-  TreeNode* sufficientSubset(TreeNode* root, int limit) {
-    if (root->left == NULL && root->right == NULL) {
-      if (root->val < limit)
-        return NULL;
-      else
-        return root;
+  std::string smallestSubsequence(std::string text) {
+    std::unordered_map<char, int> counter;
+    std::stack<char> s;
+    std::unordered_set<char> stored;
+    for (char c : text)
+      counter[c]++;
+    for (char c : text) {
+      if (stored.find(c) != stored.end()) {
+        counter[c]--;
+        continue;
+      }
+      while (s.size() > 0 && int(s.top()) > int(c) && counter[s.top()] > 1) {
+        counter[s.top()] -= 1;
+        stored.erase(s.top());
+        s.pop();
+      }
+      s.push(c);
+      stored.insert(c);
     }
-    if (root->left)
-      root->left = sufficientSubset(root->left, limit - root->val);
-    if (root->right)
-      root->right = sufficientSubset(root->right, limit - root->val);
-    if (root->left || root->right)
-      return root;
-    else
-      return NULL;
+    int i = s.size();
+    vector<char> tmp(i, ' ');
+    while (!s.empty()) {
+      tmp[i-1] = s.top();
+      i--;
+      s.pop();
+    }
+    return std::string(tmp.begin(), tmp.end());
   }
 };

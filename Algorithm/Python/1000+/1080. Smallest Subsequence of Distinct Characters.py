@@ -1,44 +1,28 @@
 # -*- coding: utf-8 -*-
-# Created on Sun Jun 09 2019 18:3:37
+# Created on Sun Jun 09 2019 18:26:4
 # Author: WuLC
 # EMail: liangchaowu5@gmail.com
 
-# recursive solution 1
+# stack
+from collections import Counter, defaultdict
 class Solution(object):
-    def sufficientSubset(self, root, limit):
+    def smallestSubsequence(self, text):
         """
-        :type root: TreeNode
-        :type limit: int
-        :rtype: TreeNode
+        :type text: str
+        :rtype: str
         """
-        if root.left == None and root.right == None:
-            return None if root.val < limit else root
-        if root.left:
-            root.left = self.sufficientSubset(root.left, limit - root.val)
-        if root.right:
-            root.right = self.sufficientSubset(root.right, limit - root.val)
-        return root if root.left or root.right else None
-
-
-# recursive solution 2, why not working?
-class Solution(object):
-    def sufficientSubset(self, root, limit):
-        """
-        :type root: TreeNode
-        :type limit: int
-        :rtype: TreeNode
-        """
-        self.dfs(root, 0, limit)
-        return root if root.left or root.right else None
-
-    def dfs(self, root, curr_sum, limit):
-        curr_sum += root.val
-        if root.left == None and root.right == None:
-            return curr_sum < limit
-        left_insuff = self.dfs(root.left, curr_sum, limit) if root.left != None else True
-        right_insuff = self.dfs(root.right, curr_sum, limit) if root.right != None else True
-        if left_insuff:
-            root.left = None
-        if right_insuff:
-            root.right = None
-        return left_insuff and right_insuff
+        count = Counter(text)
+        stack = []
+        in_stack = defaultdict(bool)
+        for c in text:
+            if in_stack[c]:
+                count[c] -= 1
+                continue
+            while stack and ord(stack[-1]) > ord(c) and count[stack[-1]] > 1:
+                count[stack[-1]] -= 1
+                in_stack[stack[-1]] = False
+                stack.pop()
+            stack.append(c)
+            in_stack[c] = True
+        return ''.join(stack)
+            
