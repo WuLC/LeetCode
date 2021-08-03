@@ -25,7 +25,7 @@ public:
 
         for (auto itr : counter) {
             // que.push(std::make_pair(itr.first, itr.second));
-            que.push(itr);
+            que.push(std::move(itr));
             if (que.size() == k+1) {
                 que.pop();
             }
