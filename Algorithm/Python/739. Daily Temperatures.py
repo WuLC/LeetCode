@@ -1,23 +1,24 @@
-# -*- coding: utf-8 -*-
-# Created on Tue Dec 05 2017 11:45:40
-# Author: WuLC
-# EMail: liangchaowu5@gmail.com
+#
+# @lc app=leetcode id=739 lang=python
+#
+# [739] Daily Temperatures
+#
 
-# stack, O(n) time
+# @lc code=start
 class Solution(object):
     def dailyTemperatures(self, temperatures):
         """
         :type temperatures: List[int]
         :rtype: List[int]
         """
-        result = [0] * len(temperatures)
-        stack = []
-        for i in range(len(temperatures)):
-            while len(stack) > 0:
-                if stack[-1][1] < temperatures[i]:
-                    idx = stack.pop()[0]
-                    result[idx] = i - idx
-                else:
-                    break
-            stack.append((i, temperatures[i]))
-        return result            
+        result, stack = [0] * len(temperatures), []
+        for i, t in enumerate(temperatures):
+            while stack and temperatures[stack[-1]] < t:
+                pre_idx = stack.pop()
+                result[pre_idx] = i - pre_idx
+            stack.append(i)
+        return result
+
+        
+# @lc code=end
+
