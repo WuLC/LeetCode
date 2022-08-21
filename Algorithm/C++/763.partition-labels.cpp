@@ -22,7 +22,8 @@ public:
             }
         }
 
-        std::vector<std::vector<int>> intervals;
+        std::vector<std::vector<int>> intervals; // intervals(char_range.size()) will cause error
+        intervals.reserve(char_range.size()); // user reserve() instead
         for (auto& iter: char_range) {
             intervals.emplace_back(iter.second);
         }
