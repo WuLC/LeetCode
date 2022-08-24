@@ -11,27 +11,21 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
 class Solution(object):
     def rob(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
-        return max(self.helper(root))
-
+        def dfs(node):
+            if node is None:
+                return (0, 0)
+            left = dfs(node.left)
+            right = dfs(node.right)
+            return (node.val + left[1] + right[1],
+                    max(left) + max(right))
+            
+        return max(dfs(root))
         
-    def helper(self, node):
-        """
-        return tuple of result indicating (rob, unrob)
-        """
-        if node is None:
-            return 0, 0
-        left_rob, left_unrob = self.helper(node.left)
-        right_rob, right_unrob = self.helper(node.right)
-        
-        return (node.val + left_unrob + right_unrob, 
-                max(left_rob, left_unrob) + max(right_rob, right_unrob))
-     
 # @lc code=end
 
