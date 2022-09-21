@@ -5,6 +5,7 @@
 #
 
 # @lc code=start
+
 class Solution(object):
     def largestRectangleArea(self, heights):
         """
@@ -12,12 +13,24 @@ class Solution(object):
         :rtype: int
         """
         result, stack = 0, []
-        heights = [0] + heights + [0]
-        for i, h in enumerate(heights):
-            while stack and heights[stack[-1]] > h:
-                curr_height = heights[stack.pop()]
-                result = max(result, curr_height * (i - stack[-1] - 1))
+        for i in range(len(heights)):
+            while stack and heights[i] < heights[stack[-1]]:
+                idx = stack.pop()
+                if stack:
+                    result = max(result, heights[idx] * (i - stack[-1] - 1))
+                else:
+                    result = max(result, heights[idx] * i)
             stack.append(i)
+        
+        # deal with increasing elements still in stack
+        # including equal elements
+        max_idx = stack[-1]
+        while stack:
+            idx = stack.pop()
+            if stack:
+                result = max(result, heights[idx] * (max_idx-stack[-1]))
+            else:
+                result = max(result, heights[idx] * (max_idx+1))
         return result
         
 # @lc code=end
