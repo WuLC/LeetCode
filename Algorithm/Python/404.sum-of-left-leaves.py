@@ -17,16 +17,19 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        if not root:
-            return 0
-        return self.helper(root.left, True) + self.helper(root.right, False)
+        self.result = 0
+        self.dfs(root.left, True)
+        self.dfs(root.right, False)
+        return self.result
     
-    def helper(self, node, is_left):
-        if not node:
-            return 0
-        if not node.left and not node.right and is_left:
-            return node.val
-        return self.helper(node.left, True) + self.helper(node.right, False)
+    def dfs(self, node, is_left):
+        if node is None:
+            return 
+        if is_left and node.left == None and node.right == None:
+            self.result += node.val
+            return 
+        self.dfs(node.left, True)
+        self.dfs(node.right, False)
         
 # @lc code=end
 
