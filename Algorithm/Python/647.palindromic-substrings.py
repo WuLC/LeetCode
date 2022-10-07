@@ -5,25 +5,20 @@
 #
 
 # @lc code=start
-
-from collections import defaultdict
-
 class Solution(object):
     def countSubstrings(self, s):
         """
         :type s: str
         :rtype: int
         """
-        n = len(s)
-        dp = [[0] * (n) for _ in range(n)]
-
+        result, n = 0, len(s)
+        dp = [[False]*n for _ in range(n)]
         for i in range(n-1, -1, -1):
-            for j in range(i, n):
-                if s[i] == s[j] and \
-                   (i+1 >= j-1 or dp[i+1][j-1] == 1):
-                        dp[i][j] = 1
+            for j in range(i, n, 1):
+                if s[i] == s[j] and (i+1 >= j-1 or dp[i+1][j-1]):
+                    dp[i][j] = True
+                    result += 1
+        return result
         
-        return sum(sum(dp[i]) for i in range(n))
-                            
 # @lc code=end
 
