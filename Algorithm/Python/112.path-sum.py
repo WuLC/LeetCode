@@ -18,11 +18,12 @@ class Solution(object):
         :type targetSum: int
         :rtype: bool
         """
-        if not root:
+        if root == None:
             return False
-        if root.left == None and root.right == None:
-            return targetSum == root.val
-        return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
-        
+        if root.left == None and root.right == None and root.val == targetSum:
+            return True
+        return self.hasPathSum(root.left, targetSum - root.val) or\
+                self.hasPathSum(root.right, targetSum - root.val)
+                
 # @lc code=end
 

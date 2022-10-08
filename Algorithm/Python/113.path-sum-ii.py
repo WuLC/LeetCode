@@ -18,20 +18,24 @@ class Solution(object):
         :type targetSum: int
         :rtype: List[List[int]]
         """
-        result = []
-        self.dfs(result, [], root, targetSum)
-        return result
-    
-    def dfs(self, result, tmp, node, target):
-        if node == None:
-            return
-        if node.left == None and node.right == None and target == node.val:
-            tmp.append(node.val)
-            result.append(tmp)
-        for _node in [node.left, node.right]:
-            if _node != None:
-                self.dfs(result, tmp + [node.val], _node, target - node.val)
+        result, candidate = [], []
+        if root == None:
+            return result
 
+        # append root
+        candidate.append(root.val)
+        def dfs(node, target):
+            if node.left == None and node.right == None and node.val == target:
+                result.append(candidate[:])
+                return
+            for leaf in (node.left, node.right):
+                if leaf:
+                    candidate.append(leaf.val)
+                    dfs(leaf, target - node.val)
+                    candidate.pop()
+
+        dfs(root, targetSum)
+        return result
         
 # @lc code=end
 
