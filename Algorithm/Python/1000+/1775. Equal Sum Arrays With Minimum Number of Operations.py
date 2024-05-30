@@ -21,8 +21,9 @@ class Solution(object):
             diff = abs(diff)
         
         idx1, idx2 = 0, n2 - 1
-        while diff > 0:
-            diff1, diff2 = 6 - nums1[idx1], nums2[idx2] - 1
+        while diff > 0 and (idx1 < n1 or idx1 >= 0):
+            diff1 = 0 if idx1 >= n1 else 6 - nums1[idx1]
+            diff2 = 0 if idx2 < 0 else nums2[idx2] - 1
             if diff1 > diff2:
                 diff -= diff1
                 idx1 += 1
