@@ -22,9 +22,17 @@ public:
         }
 
         int idx1 = 0, idx2 = n2 - 1, diff1 = 0, diff2 = 0;
-        while (diff > 0) {
-            diff1 = 6 - nums1[idx1];
-            diff2 = nums2[idx2] - 1;
+        while (diff > 0 && (idx1 < n1 || idx2 >= 0)) {
+            if (idx1 >= n1) {
+                diff1 = 0;
+            } else {
+                diff1 = 6 - nums1[idx1];
+            }
+            if (idx2 < 0) {
+                diff2 = 0;
+            } else {
+                diff2 = nums2[idx2] - 1;
+            }
             if (diff1 > diff2) {
                 diff -= diff1;
                 idx1 += 1;
