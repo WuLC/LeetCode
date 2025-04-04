@@ -1,5 +1,38 @@
+# dfs with ascending order source to make result in order
+# use visited set to reduce time complexity
+from collections import defaultdict
 
-# naive solution, TLE
+class Solution(object):
+    def getAncestors(self, n, edges):
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        graph = defaultdict(list)
+        for s, e in edges:
+            graph[s].append(e)
+        
+        result = [[] for _ in range(n)]
+
+        for i in range(n):
+            self.dfs(i, i, graph, result, set())
+        return result
+
+    def dfs(self, parent, curr, graph, result, visited):
+        if parent != curr:
+            result[curr].append(parent)
+
+        if curr not in graph:
+            return
+        for neigh in graph[curr]:
+            if neigh in visited:
+                continue
+            visited.add(neigh)
+            self.dfs(parent, neigh, graph, result, visited)
+
+"""
+# naive dfs, TLE
 from collections import defaultdict
 class Solution(object):
     def getAncestors(self, n, edges):
@@ -31,5 +64,5 @@ class Solution(object):
             path.append(self.index[curr][i])
             self.dfs(self.index[curr][i], path)
             path.pop()
-
+"""
         
