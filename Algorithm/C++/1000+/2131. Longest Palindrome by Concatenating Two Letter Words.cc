@@ -9,7 +9,7 @@ class Solution {
             int count = 0;
             for (auto w: words) {
                 std::string rw(w.rbegin(), w.rend());
-                if (record.find(rw) != record.end()) {
+                if (record.find(rw) != record.end() && record[rw] > 0) {
                     record[rw] -= 1;
                     count += 2;
                 } else {
@@ -17,9 +17,9 @@ class Solution {
                 }
             }
             for (const auto& pair: record) {
-                if (pair.second > 0 && pair.first[0] == p.first[1]) {
+                if (pair.second > 0 && pair.first[0] == pair.first[1]) {
                     count++;
-                    break
+                    break;
                 }
             }
             return count<<1;
