@@ -7,8 +7,8 @@ class Solution {
             int fill_cnt = (k - (s.size()%k)) % k;
             s += std::string(fill_cnt, fill);
             std::vector<std::string> result;
-            for (int i = 0; i < s.size(); i+=3) {
-                result.push_back(s.substr(i, 3));
+            for (int i = 0; i < s.size(); i+=k) {
+                result.push_back(s.substr(i, k));
             }
             return result;
         }
