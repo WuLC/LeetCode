@@ -9,19 +9,21 @@ class Solution:
         n = len(classes)
         # init heap
         for i in range(n):
-            p, n = classes[i]
-            heapq.heappush(heap, (-1.0*(p+1)/(n+1), i))
+            p, a = classes[i]
+            heapq.heappush(heap, (self.gain(p, a), i))
         
         # distribute extra studenst
         while extraStudents > 0:
             _, i = heapq.heappop(heap)
             counter[i] += 1
-            p, n = classes[i]
-            heapq.heappush(heap, (-1.0*(p+counter[i]+1)/(n+counter[i]+1), i))
+            p, a = classes[i]
+            heapq.heappush(heap, (self.gain(p+counter[i], a+counter[i]+1), i))
             extraStudents -= 1
         
         return sum((classes[i][0]+counter[i])/(classes[i][1]+counter[i]) for i in range(n))/n
-        
+    
+    def gain(self, p, a: int) -> float:
+        return -1.0*((p+1)/(a+1)-p/a)
 
     
 # WA dp
