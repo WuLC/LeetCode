@@ -1,3 +1,20 @@
+# simple logic can AC
+# since we are looking for the longest subsequence and order doesn't matter in this case
+# we can take the xor result of the entire array, there are two cases
+# 1) if it's not 0, then the length of the array is the result 
+# 2) if it's 0, we only need 1 element that's not 0 to get the final subsequence
+class Solution:
+    def longestSubsequence(self, nums: List[int]) -> int:
+        xor_res, n, has_non_zero = 0, len(nums), False
+        for num in nums:
+            xor_res ^= num
+            if num > 0:
+                has_non_zero = True
+        
+        if xor_res != 0:
+            return n
+        else:
+            return n-1 if has_non_zero else 0
 
 
 # TLE dp solution
